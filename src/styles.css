@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+html{
+  background-color: white;
+    padding:0;
+    margin: 0;
+}
+.price{
+    font-family: 'Rubik', sans-serif;
+}

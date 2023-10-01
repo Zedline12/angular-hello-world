@@ -1,0 +1,46 @@
+.cardd,.card-body,.card{
+    background-color:#fafafa;
+}
+.card{
+   
+   border:0px; 
+    cursor: pointer;
+}
+.card-img-top{
+    width: 220px;
+    max-height: 300px;
+    
+}
+.bg-primaryy{
+   background-color:white;
+}
+.card-title{
+    font-size: 1em !important;
+  
+}
+.bi{
+    margin-left: 12px;
+    font-size: 1vw !important;
+    cursor: pointer;
+}
+
+.rating{
+    padding:0;
+    margin:0;
+}
+.fa-star{
+    padding: 0 5px !important;
+    font-size: 20px !important;
+    color:darkorange !important;
+   
+    &:hover {
+        transform: rotate(0deg) scale(1.2) !important;
+    }
+}
+.price{
+font-size:1.5rem;
+font-family: 'Rubik', sans-serif;
+}
+.checked{
+    color:black;
+}

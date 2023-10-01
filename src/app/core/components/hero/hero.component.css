@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap');
+
+*{
+    font-family: 'Mulish', sans-serif;
+    
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+.hero h1{
+    font-family: 'Anton', sans-serif;
+}
+.hero h2{
+    font-weight:800;
+}
+.hero .btn {
+    /* Positioning and sizing */
+    display: block;
+    width: 200px;
+    
+    /* Padding and margins */
+    padding: 1em;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* Text styles */
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    
+    /* Border styles */
+    border: 3px solid white;
+    border-radius: 20px;
+    font-weight:800;
+    /* Background styles */
+    background-color: #d61002;
+}
+.hero {
+    /* Sizing */
+    width: 100vw;
+    height: 100vh;
+    
+    /* Flexbox stuff */
+    display: flex;
+    justify-content: center;
+    align-items: top;
+   
+    
+    /* Text styles */
+    text-align: center;
+    color: white;
+    
+    /* Background styles */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url("/assets/images/background/labtop.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.hero-inner{
+    margin-top:100px;
+}
+
+body {
+    
+    font-family: sans-serif;
+}
+@media(max-width:400px){
+    .hero h1 {
+        /* Text styles */
+        font-size: 3em;
+        
+        /* Margins */
+        margin-top: 0;
+        margin-bottom: 0.5em;
+    }
+}
+@media (min-width: 400px) {
+    .hero h1 {
+        /* Text styles */
+        font-size: 3em;
+        
+        /* Margins */
+        margin-top: 0;
+        margin-bottom: 0.5em;
+    }
+   
+  }
+@media (min-width: 576px) {
+    .hero h1 {
+        /* Text styles */
+        font-size: 4em;
+        
+        /* Margins */
+        margin-top: 0;
+        margin-bottom: 0.5em;
+    }
+   
+  }
+
+
+@media (min-width: 768px) { 
+    .hero h1 {
+        /* Text styles */
+        font-size: 4em;
+        
+        /* Margins */
+        margin-top: 0;
+        margin-bottom: 0.5em;
+    }
+    .hero .btn{
+        margin-bottom:2.5em
+       }
+   
+}
+
+
+
+@media (min-width: 992px) { 
+    .hero h1 {
+        /* Text styles */
+        font-size: 7em;
+        
+        /* Margins */
+        margin-top: 0;
+        margin-bottom: 0.5em;
+    }
+    .hero .btn{
+        margin-bottom:2.5em
+       }
+ }
+
+@media (min-width: 1200px) {
+    .hero h1 {
+        /* Text styles */
+        font-size: 10em;
+        
+        /* Margins */
+        margin-top: 0;
+        margin-bottom: 0.5em;
+    }
+    .hero .btn{
+        margin-bottom:2.5em
+       }
+ }
+
+@media (min-width: 1400px) {
+    .hero h1 {
+        /* Text styles */
+        font-size: 14em;
+        
+        /* Margins */
+        margin-top: 0;
+        margin-bottom: 0.5em;
+    }
+    .hero h2{
+        font-size: 3em;
+    }
+    .hero .btn{
+     margin-bottom:2.5em
+    }
+  }

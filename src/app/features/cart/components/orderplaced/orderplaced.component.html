@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="row d-flex justify-content-center bg-white">
+        <div class="row">
+            <h1>Your Orders</h1>
+            <div class="row "style="margin-top:15px;">
+                <div class="col-2">
+                    <p>Orders</p>
+                </div>
+                <div class="col-2">
+                    <p>Buy Again</p>
+                </div>
+                <div class="col-2">
+                    <p>Cancelled Orders</p>
+                </div>
+                <hr/>
+            </div>
+        </div>
+    
+
+
+    <div *ngFor="let order of orders" class="row mt-5 col-8 d-flex justify-content-center "style="padding:0px;border:1px solid grey;">
+        <div class="row"style="background-color:whitesmoke;margin:0px;">
+            <div class="col-2">
+                <p>Order Placed</p>
+                <p>{{order.orderdate}}</p>
+            </div>
+            <div class="col-2">
+                <p>Total</p>
+                <p>Egp <span class="price">{{order.total}}</span></p>
+            </div>
+            <div class="col-2">
+                <p>Ship To</p>
+                <p class="de">{{order.fullname}}</p>
+            </div>
+            <div class="col-6 d-flex justify-content-end">
+                <div class="row-column">
+                    <div class="col-12">
+                        <p>Order Number# {{order.ordernumber}}</p>
+                    </div>
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="row">
+                            <div class="col-8">
+                                <p class="de">Order Details</p>
+                            </div>
+                            <div class="col-4">
+                               <p class="de">Invoice</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     <div class="row mt-5">
+         <div class="col-2"style="padding:20px;padding-top:0;">
+        <img src="{{order.image}}" style="width:90%;"/>
+         </div>
+         <div class="col-6 " style="margin-left:3rem;">
+            <div class="row-column">
+                <div class="col">
+                    <p>{{order._name}}</p>
+                </div>
+                <div class="col mt-5">
+                    <div class="row">
+                        <div class="col-3"style="padding:0;">
+                        <button class="button-1">Buy Again</button>
+                        </div>
+                        <div class="col-3"style="padding:0;">
+                         <button class="button-1">View Item</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+         <div class="col-3">
+            <div class="row-column">
+                <div class="col">
+                 <button class="button-1" style="padding:1px 10px;background-color:whitesmoke;color:black;">Return or Replace Item</button>
+                </div>
+                <div class="col">
+                 <button class="button-1" style="white-space: nowrap;padding:1px 10px;margin-top: 20px;background-color:whitesmoke;color:black;">Write A Product Review</button>
+                </div>
+            </div>
+         </div>
+     </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap');
+*{
+    font-family: 'Mulish', sans-serif;
+}
+.red{
+    border-color: red;
+}
+
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+    }
+    .card-registration .select-arrow {
+    top: 13px;
+    }
+    .cr{
+        color:white;
+        background-color: #d61002 ;
+        
+    }
+   
+
+    
+    @media (min-width: 1200px) {
+        .form-control{
+            padding:0.8rem;
+            margin-bottom:1.2em;
+        }
+     }
+    
+    @media (min-width: 1400px) { 
+
+     .form-control{
+            padding:0.8rem;
+            margin-bottom:1.2em;
+        }
+     }

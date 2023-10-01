@@ -1,0 +1,176 @@
+
+<button id="openmodal"  class="d-none" (click)="openmodal()"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">Open</button>
+
+<div class="wrapper">
+</div>
+    <div [ngClass]="loading? 'show':''" class="overlay"></div>
+    <div [ngClass]="loading? 'show':''" class="spanner ">
+      <div class="loader"></div>
+      <p>Uploading Product, Please Be Patient.</p>
+    </div>
+    <div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-3">
+            <div  style="cursor: pointer;margin-right:20px;" class="p-3 bg-white shadow d-flex justify-content-around align-items-center rounded" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <div>
+                    <h3 >Edit Or View</h3>
+                    <p style="margin:0" class="fs-5"><span style="margin-right:5px;font-weight:bold;"></span>Active Products</p>
+                    <p style="margin:0">From <span >6</span> Categories</p>
+                </div>
+                <i class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div  style="cursor: pointer;margin-right:20px;" class="p-3 bg-white shadow d-flex justify-content-around align-items-center rounded" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <div>
+                    <h3 >Edit Or View</h3>
+                    <p style="margin:0" class="fs-5"><span style="margin-right:5px;font-weight:bold;"></span>Active Products</p>
+                    <p style="margin:0">From <span >6</span> Categories</p>
+                </div>
+                <i class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div  style="cursor: pointer;" class="p-3 bg-white shadow d-flex justify-content-around align-items-center rounded" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <div>
+                    <h3 >Edit Or View</h3>
+                    <p style="margin:0" class="fs-5"><span style="margin-right:5px;font-weight:bold;"></span>Active Products</p>
+                    <p style="margin:0">From <span >6</span> Categories</p>
+                </div>
+                <i class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+            </div>
+        </div>
+    </div>
+        <hr  />
+              
+<div class="container-fluid p-5" >
+    <div class="row d-flex justify-content-center" >
+    <div  class="form col-lg-6 col-md-7">
+        <div class="row rowmain bg-white shadow ">
+        
+            <form [formGroup]="product" (ngSubmit)="submit()">
+            <div class="row roww">
+                <div class="col-md-6 col-lg-6 col-xl-6 col-xs-12 d-flex justify-content-center flex-column">
+                    <h5>Name</h5>
+                    <input [(ngModel)]="cardproduct._name" name="_name" [ngClass]="!_name?.valid && (_name?.dirty || _name?.touched) ?'red':''" formControlName="_name"/>
+                </div>
+                <div class="col-md-6  d-flex justify-content-center flex-column">
+                    <h5>Description</h5>
+                    <input [ngClass]="!_desc?.valid && (_desc?.dirty || _desc?.touched) ?'red':''" formControlName="_desc"/>
+                </div>
+                <div class="col-md-6 mt-5 d-flex justify-content-center flex-column">
+                    <h5>Category</h5>
+                    <select class="form-select" formControlName="category_id" aria-label="Default select example" (change)="sel()">
+                        <option disabled selected>Select Category</option>
+                        <option *ngFor="let x of categories" [ngValue]="x.id">{{x._name}}</option>
+                        
+                      </select>
+                </div>
+                <div class="col-md-6 mt-5 d-flex justify-content-center flex-column">
+                    <h5>Price</h5>
+                    <span></span><input type="number" [(ngModel)]="cardproduct.price" class="price"  [ngClass]="!price?.valid && (price?.dirty ||price?.touched) ?'red':''" formControlName="price"/>
+                </div>
+                <div class="col-md-6 mt-5 d-flex justify-content-center flex-column">
+                    <h5>Image</h5>
+                    <input class="form-control form-control-lg" id="formFileLg" type="file" (change)="fileselect($event)" />
+                </div>
+                <div class="col-md-6 mt-5 d-flex justify-content-center flex-column">
+                    <h5>Product Type</h5>
+                    <select class="form-select" formControlName="producttype" aria-label="Default select example" (change)="seltype($event)">
+                        <option disabled selected>Select Type</option>
+                        <option *ngFor="let type of producttypes" [ngValue]="type.id">{{type.producttype}}</option>
+                      </select>
+                </div>
+                <div class="col-md-12 mt-5 d-flex justify-content-center">
+                    <h5>Product Options:</h5>
+                 </div>
+        </div>
+        
+        <div *ngIf="producttype=='2'" class="row ">
+            <div class="col-md-6 d-flex justify-content-center flex-column">
+                <h5>Brand Name</h5>
+                <select class="form-select"  #brand aria-label="Default select example" (change)="selbrandname(brand.value)">
+                    <option disabled selected>Select Brand</option>
+                    <option *ngFor="let object of avaoptions" [ngValue]="object.brandname">{{object.brandname}}</option>
+                  </select>
+            </div>
+            <div class="col-md-6  d-flex justify-content-center flex-column">
+                <h5>Operating System</h5>
+                <select class="form-select"  aria-label="Default select example" #system (change)="selopersystem(system.value)">
+                    <option disabled selected>Select Brand</option>
+                    <option *ngFor="let object of avaoptions" [ngValue]="object.opersystem">{{object.opersystem}}</option>
+                  </select>
+            </div>
+            <div class="col-md-6 mt-5 d-flex justify-content-center flex-column">
+                <h5>Memory Storage</h5>
+                <select class="form-select" #memory aria-label="Default select example" (change)="selmemory(memory.value)">
+                    <option disabled selected>Select Category</option>
+                    <option *ngFor="let object of avaoptions" [ngValue]="object.memorystorage">{{object.memorystorage}}</option>
+                    
+                  </select>
+                  <button style="width:30%;background-color: darkblue;color:white;font-weight: 600;" type="button" (click)="pushmemory()">Add To List</button>
+            </div>
+            <div class="col-md-6 mt-5 d-flex justify-content-center flex-column">
+                <h5>Color</h5>
+                <select class="form-select" #color aria-label="Default select example" (change)="selcolor(color.value)">
+                    <option disabled selected>Select Category</option>
+                    <option *ngFor="let object of avaoptions" [ngValue]="object.color">{{object.color}}</option>
+                    
+                  </select>
+                  <button style="width:30%;background-color: darkblue;color:white;font-weight: 600;"type="button" (click)="pushcolor()">Add To List</button>
+            </div>
+            <div class="col-md-6  mt-5 d-flex justify-content-center flex-column">
+                <h5>Screen Size</h5>
+                <input class="form-control form-control-lg"  id="formFileLg" min="3" max="8" (input)="selscreensize($event)" type="number"/>
+                <button style="width:30%;background-color: darkblue;color:white;font-weight: 600;"type="button" (click)="pushscreen()">Add To List</button>
+            </div>
+            <div class="col-md-6  d-flex justify-content-center flex-column" style="margin-top:15px;">
+                <h5>Quantity</h5>
+                <input class="form-control-md"  id="formFileLg" min="3" max="8" formControlName="quantity" type="number"/>
+            </div>
+           
+    </div>
+         <div class="row shadow">
+           <div class="col-4 text-left">
+            <img src="{{imageurl}}" style="width:200px;height:300px">
+           </div>
+           <div class="col-8">
+            <div class="row shadow row-column">
+                <div class="col-12">
+                    <p><strong *ngIf="colors.length>0">{{colors.length}}</strong> Colors:<strong *ngFor="let color of colors" style="margin-right:20px;">{{color}}<p style="color:red; margin-left:5px;cursor: pointer;"(click)="delcolor(color)">X</p></strong></p>
+                </div>
+                <div class="col-12">
+                    <p><strong *ngIf="memorystorages.length>0">{{memorystorages.length}}</strong> Memory Storages:<strong *ngFor="let memory of memorystorages" style="margin-right:20px;">{{memory}}<p style="color:red; margin-left:5px;cursor: pointer;"(click)="delmemory(memory)">X</p></strong></p>
+                </div>
+                <div class="col-12">
+                    <p><strong *ngIf="screensizes.length>0">{{screensizes.length}}</strong> ScreenSizes:<strong *ngFor="let size of screensizes" style="margin-right:20px;">{{size}}<p style="color:red; margin-left:5px;cursor: pointer;"(click)="delscreen(size)">X</p></strong></p>
+                </div>
+            </div>
+           </div>
+         </div>
+        <div class="col-md-12 mt-5 d-flex justify-content-center">
+                
+            <button class="add" type="submit">Add</button>
+        </div>
+    
+    </form>
+    
+    </div>
+    <span class="top"></span>
+    <span class="right"></span>
+    <span class="bottom"></span>
+    <span class="left"></span>
+    </div>
+    <div  class=" col-12  col-md-6 col-lg-4 d-flex justify-content-center  ">
+        <div  class="col-8  d-flex justify-content-center ">
+            <app-prcard style="position: fixed;" class="col-3 shadow"  [product]="cardproduct"></app-prcard>
+        </div>
+       
+    </div>
+</div>
+    </div>
+
+    <done #modal></done>
+</div>
+
+

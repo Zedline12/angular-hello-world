@@ -1,0 +1,244 @@
+<div #modal class="modal modal-xl  fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div   class="modal-dialog modal-dialog-centered  ">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h5 class="modal-title text-center" id="staticBackdropLabel">Your Products Stock</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div  class="modal-body">
+           <div  class="container-fluid">
+            <div class="row toprow">
+                <div class="col-lg-3 col-md-5 col-12 d-flex align-items-center">
+                    <div class="dropdown" #dropdown>
+                        <h2 class="dropdown-toggle" data-bs-toggle="dropdown" style="cursor: pointer;" >
+                        {{category}}
+                        </h2>
+                        <ul class="dropdown-menu">
+                            <li  (click)="selectcat('All Categories')"><a class="dropdown-item active" >All Categories</a></li>
+                          <li (click)="selectcat('Electronics')"><a class="dropdown-item" >Electronics</a></li>
+                          <li (click)="selectcat('Fashions')"><a class="dropdown-item" >Fashions</a></li>
+                          <li (click)="selectcat('Lighting')"><a class="dropdown-item" >Lighting</a></li>
+                        </ul>
+                      </div>
+                </div>
+                
+                <div class="col-md-9 col-12 utable mt-4" >
+                   <table class="bigtable w-100">
+                    <tr>
+                        <th>
+                        Products Sold Out
+                        </th>
+                        <th style="margin-left:50px;">
+                        Active Products
+                        </th>
+                        <th style="margin-left:10px;">
+                         Discount Products
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            {{numbers.sold}}
+                        </td>
+                        <td>
+                            {{numbers.activeproducts}}
+                        </td>
+                        <td>
+                            {{numbers.discountproducts}}
+                        </td>
+                    </tr>
+                   </table>
+
+                   <table  class="smalltable">
+                    <tr>
+                        <th>
+                        Products Sold Out
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            {{numbers.sold}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Active Products
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            {{numbers.activeproducts}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Discount Products
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            {{numbers.discountproducts}}
+                        </td>
+                    </tr>
+                       
+                   </table>
+                </div>
+            </div>
+            <hr style="height: 5px;
+            background-color: black;
+            border:none;" class="mt-5"/>
+            <div class="row botrow">
+               
+             <div class="col-12 mt-5" style="max-height:50vh;overflow: auto;" >
+            
+                <table *ngFor="let product of products"   class="table  cl ">
+                   
+                    <tr>
+                      
+                        <th>
+                           Name
+                        </th>
+                        <th >
+                            +
+                          </th>
+                          <th >
+                           +
+                          </th>
+                          <th>
+                             +
+                          </th>
+                        <th>
+                            Price
+                         </th>
+                         <th>
+                            Stock
+                         </th>
+                         <th>
+                            Sold
+                         </th>
+                        
+                         <th>
+                           Rating
+                         </th>
+                    </tr>
+                    <tr>
+                       
+                        <td  class="name">
+                           {{product._name}}
+                        </td>
+                       
+                        <td  class="functions">
+                            Add Stock
+                         </td>
+                         <td  class="functions">
+                            Add Discount
+                         </td>
+                         <td  class="functions">
+                            Edit Product
+                         </td>
+                        <td >
+                            Egp {{product.price |price}}
+                         </td>
+                         <td >
+                            {{product.stock}}
+                         </td>
+                         <td >
+                            {{product.sold}}
+                         </td>
+                         <td >
+                            4.5
+                         </td>
+                    </tr>
+                </table>
+
+                 
+                <table *ngFor="let product of products"  class=" cs mb-5">
+                    <tr>
+                    <!--First 3 Rows Coulmns-->
+                        <th>
+                           Name
+                        </th>
+                        <th>
+                            +
+                          </th>
+                          <th>
+                           +
+                          </th>
+                        
+                       
+                         </tr>
+                         <!--End Row-->
+                         
+                         <!--Start Row-->
+                         <tr>
+                            <td>
+                                {{product._name}}
+                        </td>
+                        <td class="functions">
+                            Add Stock
+                          </td>
+                          <td class="functions">
+                           Add Discount
+                          </td>
+                       
+                        </tr>
+
+                        <!--Start Second Row columns-->
+                         <tr>
+                            <th>
+                                +
+                             </th>
+
+                            <th>
+                            Stock
+                         </th>
+                         <th>
+                           Sold
+                         </th>
+                         
+                        
+                        </tr>
+                        <tr>
+                            <td class="functions" >
+                                Edit Product
+                               </td>
+                               <td>
+                               {{product.stock}}
+                               </td>
+                             <td>
+                                {{product.sold}}
+                             </td>
+                            
+                        </tr>
+                        <!--End Row-->
+                        
+                        
+                         <tr>
+                            <th>
+                               Price
+                             </th>
+                             <th>
+                               Rating
+                             </th>
+                             <th>
+
+                             </th>
+                            </tr>
+                            <tr>
+                               <td>{{product.price|price}}</td>
+                                 <td>
+                                    4.5
+                                 </td>
+                            </tr>
+                            
+                </table>
+             </div>
+            </div>
+           </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>

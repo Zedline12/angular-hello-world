@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap');
+.icon-hover:hover {
+    border-color: #3b71ca !important;
+    background-color: white !important;
+    color: #3b71ca !important;
+  }
+  
+  .icon-hover:hover i {
+    color: #3b71ca !important;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+.price{
+    font-family: 'Rubik', sans-serif;
+}
+.font{
+  font-family: 'Mulish', sans-serif;
+}
+:host {
+  color: var(--color);
+} 
+.optbutton{
+  background-color: whitesmoke;
+  padding:0.5rem 1rem;
+  font-weight: bold;
+  color: #1104c7;
+  border: 1px solid #1104c7; /* Green */
+  cursor: pointer;
+  transition-duration: 0.4s
+}

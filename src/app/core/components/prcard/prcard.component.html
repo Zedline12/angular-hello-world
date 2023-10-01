@@ -1,0 +1,21 @@
+<div class="cardd"  style="max-width: 300px;">
+    <div id="card" (click)="selected({product})" class="card">
+      <div class="text-center">
+        <img src='{{product.image}}' class="card-img-top img-fluid" alt="...">
+      </div>
+        <div class="card-body mt-4  ">
+          <h5 class="card-title">{{product._name}}</h5>
+          <div style="margin-top:20px;">
+            <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          </div>
+          <p class="card-text price"style="margin-top:10px;"><span style="font-size:0.8em;margin-right:2px;">Egp</span><span style="">{{product.price|price}}</span></p>
+          <p style="font-weight:600;font-size:1em;">Get it as soon as tomorrow, Sep 11
+            EGP 26.00 shipping</p>
+       
+        </div>
+    </div>
+</div>

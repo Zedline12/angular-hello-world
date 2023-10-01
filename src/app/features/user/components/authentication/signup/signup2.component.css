@@ -1,0 +1,48 @@
+.container {
+    width: 50%;
+    color:white;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(24,139,161,1) 47%, rgba(0,212,255,1) 100%);
+    padding: 60px 20px;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+}
+
+body {
+    background-color: blueviolet;
+}
+
+
+.form-control {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #555;
+}
+
+.form-select {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #555;
+}
+
+.btn-primary {
+    border-radius: 0;
+    background-color: #e74c3c;
+    border: none;
+}
+
+@media only screen and (max-width:600px) {
+    .container {
+        width: 90%;
+        margin-top: 30px;
+        position: absolute;
+         left: 50%;
+    top: 50%;
+        padding-bottom: 40px;
+
+        
+    }
+}
