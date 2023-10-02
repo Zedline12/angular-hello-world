@@ -15,6 +15,9 @@ super()
    getproducts():Observable<product[]>{
     return this.http.get(this.url+"/products") as Observable<product[]>
    }
+   getproductbyid(id:Number):Observable<product>{
+    return this.http.get(this.url+"/products/"+id) as Observable<product>
+   }
    insertproducts(data:any):void{
     const date=moment().format('YYYY-MM-DD')
     const headers={'Content-Type':'application/json'}

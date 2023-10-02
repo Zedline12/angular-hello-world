@@ -1,0 +1,76 @@
+.icon{
+    width:5px;
+    height:5px;
+}
+ul{
+    margin:0;
+    padding:0;
+}
+
+.editbut {
+  background: yellow;
+  border-radius: 999px;
+  box-shadow: green 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 14px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+
+.cardd,.card-body,.card{
+    background-color:#fafafa;
+}
+.remove
+{ opacity:0;
+   transition: 1s;
+}
+.card{
+   
+   border:0px; 
+    cursor: pointer;
+}
+.card-img-top{
+    width: 100px;
+    max-height: 130px;
+    
+}
+.bg-primaryy{
+   background-color:white;
+}
+.card-title{
+    font-size: 0.9em !important;
+  
+}
+
+.rating{
+    padding:0;
+    margin:0;
+}
+.fa-star{
+    padding: 0 0px !important;
+    font-size: 15px !important;
+    color:darkorange !important;
+   
+    &:hover {
+        transform: rotate(0deg) scale(1.2) !important;
+    }
+}
+.price{
+font-size:1.5rem;
+font-family: 'Rubik', sans-serif;
+}
+.checked{
+    color:black;
+}

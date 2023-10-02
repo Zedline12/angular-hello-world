@@ -1,0 +1,42 @@
+
+<div id="theFixed" class="col-4 position-fixed" style="margin-left:0px;font-size: 1rem;">
+    <div class="row">
+        
+<div class="col-10 right_side "style="border:1px solid rgb(126, 133, 155,0.5);">
+    
+<h2 class="product_name p-3 "style="font-weight:bold;margin-bottom:10px;">Order Summary</h2>
+    <div class="col-12 d-flex justify-content-center">
+                
+                <input style="border-style: none;width:70%; padding:8px 8px;" type="text" class="" placeholder="Coupon Code" />
+                <button type="button" style="" class="apply">Apply</button>
+     </div>
+     <div class="row d-flex justify-content-center">
+        <div class="col-10 mt-3 mb-3 ">
+    
+<div class="d-flex justify-content-between mt-3 mb-3">
+<p class="notimp">SubTotal</p>
+<p class="notimp"><span style="font-size:1em;color:#404553;">Egp</span><span class="price" style="font-size: 1.2rem;color:#404553;">{{totalamount|price}}</span></p>
+</div>
+<div class=" d-flex justify-content-between">
+<p class="notimp">Shipping Charge</p>
+<p class="notimp"><span style="font-size:1em;color:#404553;">Egp</span><span class="price" style="font-size:1.2rem;color:#404553;" id="shipping_charge">50.0</span></p>
+</div>
+<hr class="" style="margin-top:2.5em;" />
+<div class="total-amt d-flex justify-content-between font-weight-bold">
+<p class="mt-3" style="font-size:1.5rem;font-weight: bold;">Total<span style="font-size: 1rem;font-weight: 500;">(including VAT)</span></p>
+<p class="mt-3"><span style="font-size:1.5rem;">Egp</span><span class="price" id="total_cart_amt">{{totalamount+343545|price}}</span></p>
+
+</div>
+    <button [routerLink]="['/checkout']" style="width:100%;padding:0.5em 0px;font-family: 'Fjalla One', sans-serif;font-size:1.5em;" class="mt-5 apply">CheckOut</button>
+</div>
+</div>
+</div>
+<!-- discount code part -->
+
+
+
+
+<!-- discount code ends -->
+
+</div>
+</div>

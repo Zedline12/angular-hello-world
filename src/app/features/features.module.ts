@@ -6,18 +6,23 @@ import { UserModule } from './user/components/user.module';
 import { SupplierModule } from './supplier/supplier.module';
 import { CategoryService } from '../core/services/category.service';
 import { CartModule } from './cart/cart.module';
+
+import { SearchoptionsComponent } from './product/searchoptions/searchoptions.component';
+import { MainComponent } from './product/main/main.component';
 import { ProductsearchComponent } from './product/productsearch/productsearch.component';
+import { CoreModule } from '../core/core.module';
 @NgModule({
   declarations: [
-   
-    
-    ProductsearchComponent
+             ProductsearchComponent,
+             SearchoptionsComponent,
+             MainComponent
   ],
   imports: [
     FeaturesRoutingModule,
     UserModule,
     SupplierModule,
-    CartModule
+    CartModule,
+    CoreModule,CommonModule
   ],
   providers:[
     CategoryService

@@ -1,0 +1,12 @@
+<div class="container-fluid">
+    <div class="row">
+        <div style="" class="col-md-2">
+         <searchoptions></searchoptions>
+        </div>
+        <div  class=" col-md-10">
+         <div class="row mt-5">
+            <app-prcard [routerLink]="['/selctproduct',product.id]" class="d-flex mb-5 justify-content-sm-start justify-content-center col-lg-3 col-md-4 col-sm-6 col-12" *ngFor="let product of products" [product]="product"></app-prcard>
+         </div>
+        </div>
+    </div>
+</div>

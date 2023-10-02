@@ -9,6 +9,9 @@ import { supplier } from 'src/app/core/models/supplier';
 export class AuthService extends api {
 
   constructor(private http:HttpClient) {super() }
+  adminloginhelper():Observable<any>{
+   return this.http.get(this.url+"/suppliers")
+  }
   login(supplier:supplier):Observable<any>{
     let queryParams = new HttpParams();
     queryParams = queryParams.append("email",supplier.email);

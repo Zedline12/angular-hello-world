@@ -4,11 +4,18 @@
     font-family: 'Mulish', sans-serif;
   
 }
+.chart-container{
+ font-weight: 800;
+}
 h3{
   font-family: 'Fjalla One', sans-serif;
 }
 .cardd{
   background-color:#ffea03;
+  
+}
+.leftcard{
+  background-color: rgba(161, 198, 247, 1);
 }
 .rowdate .dropdown-toggle{
   cursor:pointer;

@@ -9,41 +9,40 @@ import { product } from 'src/app/core/models/product';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  cartitems!:[cart_item]
-  cartproducts=new Array()
+  products=new Array()
   totalamount:number=0
+
+
   constructor(private cartserv:CartService){}
 ngOnInit(): void {
+  let cartitems=new Array()
+  let cartproducts=new Array()
  var session=localStorage.getItem("cartsessionid")
  if(session!=null){
   try{
     this.cartserv.getcartitems(Number(session)).subscribe(x=>{
-      this.cartitems=x
-        for(let i=0;i<=this.cartitems.length-1 ;i++){
-          this.cartserv.getproductbyid(this.cartitems[i].product_id).subscribe(x=>{
-            this.cartproducts.push(x[0])
-            this.totalamount+=this.cartitems.find(item=>item.product_id==x[0].id)!?.quantity*Number(x[0].price)
+      cartitems=x
+        for(let i=0;i<=cartitems.length-1 ;i++){
+          this.cartserv.getproductbyid(cartitems[i].product_id).subscribe(x=>{
+            cartproducts[i]=x
+            this.products.push({...x,...cartitems[i]})
+            this.totalamount+=cartitems.find(item=>item.product_id==x[0].id)!?.quantity*Number(x[0].price)
           })
-         
+          
         }
-       
-     
     })}
     catch(err){
 
     }finally{
-      
+   
     }
  }
 }
-get cartproductss(){
-  return this.cartproducts
-}
 
-removecartitem(productid:any){
-  this.cartserv.removecartitem(Number(productid)).subscribe(x=>{
-    this.cartitems=this.cartitems.filter(item=>!(item.product_id==Number(productid))) as [cart_item]
-    this.cartproducts=this.cartproducts.filter(item=>!(item.id==Number(productid))) 
-  })
+
+removecartitem(itemid:any){
+  this.cartserv.removecartitem(itemid).subscribe(x=>{
+    this.products=this.products.filter(item=>item.id!=itemid)
+ })
 }
 }

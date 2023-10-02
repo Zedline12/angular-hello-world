@@ -11,12 +11,14 @@ import { CoreModule } from 'src/app/core/core.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser'
 import { OrderplacedComponent } from './components/orderplaced/orderplaced.component';
+import { OrdersummaryComponent } from './components/main/ordersummary/ordersummary.component';
 @NgModule({
   declarations: [
     SqrtPipe,
    MainComponent,
    CheckoutComponent,
-   OrderplacedComponent
+   OrderplacedComponent,
+   OrdersummaryComponent
   ],
   imports: [
     CartRoutingModule,

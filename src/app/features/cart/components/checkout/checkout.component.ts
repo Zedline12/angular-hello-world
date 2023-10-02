@@ -72,7 +72,7 @@ export class CheckoutComponent implements OnInit {
           this.cartitems=x
             for(let i=0;i<=this.cartitems.length-1 ;i++){
               this.cartserv.getproductbyid(this.cartitems[i].product_id).subscribe(x=>{
-                this.cartproducts.push(x[0])
+                this.cartproducts.push(x)
                 this.totalamount+=this.cartitems.find(item=>item.product_id==x[0].id)!?.quantity*Number(x[0].price)
               })
              

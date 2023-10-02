@@ -7,7 +7,7 @@ import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
-  {path:'signup',component:SignupComponent},
+  {path:'supsignup',component:SignupComponent},
   {
     path: 'supplierhome',
     loadChildren: () => import('../supplier.module').then(m => m.SupplierModule)

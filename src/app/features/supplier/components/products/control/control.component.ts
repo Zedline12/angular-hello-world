@@ -1,4 +1,4 @@
-import { Component,OnInit,ViewChild } from '@angular/core';
+import { AfterViewInit, Component,ElementRef,OnInit,ViewChild } from '@angular/core';
 import { SupplierService } from '../../../services/supplier.service';
 import { EditmodalComponent } from '../../../modals/editmodal/editmodal.component';
 @Component({
@@ -6,7 +6,7 @@ import { EditmodalComponent } from '../../../modals/editmodal/editmodal.componen
   templateUrl: './control.component.html',
   styleUrls: ['./control.component.css']
 })
-export class ControlComponent implements OnInit{
+export class ControlComponent implements OnInit,AfterViewInit{
   lastweekorders=new Array()
   suppliername!:string
   lastweekordersprofit:number=0
@@ -16,8 +16,17 @@ export class ControlComponent implements OnInit{
   async openmodal(){
      return await this.modalComponent.open()
   }
-   constructor(private serv:SupplierService){
+   constructor(private serv:SupplierService,private elementref:ElementRef){
     
+   }
+   add(){
+   
+   }
+   ngAfterViewInit(): void {
+    var s = document.createElement("script");
+    s.type = "text/javascript";
+    s.src = "assets/js/control.js";
+    this.elementref.nativeElement.appendChild(s);
    }
    ngOnInit(): void {
     this.serv.suppliername(Number(localStorage.getItem("supplierid"))).subscribe(x=>{
@@ -28,7 +37,6 @@ export class ControlComponent implements OnInit{
      this.serv.lastweekorders(Number(localStorage.getItem("supplierid")),0).subscribe(x=>{
       this.lastweekorders=x
       this.lastweekorders.forEach(order=>this.lastweekordersprofit+=Number(order.price))
-      console.log(this.lastweekordersprofit)
      })
 
      this.serv.admindash_numbers(Number(localStorage.getItem("supplierid"))).subscribe(x=>{

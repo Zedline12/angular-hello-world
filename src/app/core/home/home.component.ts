@@ -27,7 +27,6 @@ export class HomeComponent implements OnInit{
     this.productserv.getproducts()
      .subscribe((data)=>{
       this.products=data as product[]
-      console.log(this.products[0])
     },(err)=>{
    },()=>{
    }
