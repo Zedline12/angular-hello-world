@@ -1,7 +1,7 @@
 <editmodal #modal></editmodal>
 <div class="d-flex" id="wrapper" style="">
    
-    <div class="bg-white" id="sidebar-wrapper">
+    <div class="cardd" style="background-color: whitesmoke;" id="sidebar-wrapper">
         <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
                 class="fas fa-user-secret me-2"></i>Codersbite</div>
         <div class="list-group list-group-flush my-3">
@@ -55,7 +55,19 @@
                 </ul>
             </div>
         </nav>
-
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <div class="card chart-container">
+                    <canvas id="chart"></canvas>
+                  </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card chart-container">
+                    <canvas id="barchart"></canvas>
+                  </div>
+            </div>
+           
+        </div>
         <div class="container-fluid px-4">
             <div class="row g-3 my-2">
                 <div class="col-md-3">
@@ -71,6 +83,7 @@
 
                   <!-- Modal -->
                   
+                
 
                 
 
@@ -119,23 +132,8 @@
                 </div>
 
             </div>
-            <div class="row my-2">
-                <div class="col-md-6 py-1">
-                    <div class="card">
-                        <div class="card-body">
-                            <canvas class="cc" id="chLine"></canvas>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 py-1">
-                    <div class="card">
-                        <div class="card-body">
-                            <canvas id="chBar"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+           
+           
             <div class="row my-5">
                 <div class="col-12">
                     <div class="row">

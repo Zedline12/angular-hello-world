@@ -22,7 +22,7 @@ import { FooterComponent } from './core/components/footer/footer.component';
     CoreModule,
     FeaturesModule,
   ],
-  exports:[AppRoutingModule,RouterModule],
+  exports:[AppRoutingModule],
   bootstrap: [AppComponent]
 })
 export class AppModule {

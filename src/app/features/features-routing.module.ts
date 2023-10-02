@@ -1,10 +1,8 @@
 import { NgModule } from "@angular/core";
 import { Routes ,RouterModule} from "@angular/router";
 import { SelctproductComponent } from './user/components/selctproduct/selctproduct.component';
-import { ProductsearchComponent } from "./product/productsearch/productsearch.component";
 const routes: Routes = [
-    { path: 'selctproduct',component:SelctproductComponent},
-    { path: 'productsearch',component:ProductsearchComponent},
+    { path: 'selctproduct/:id',component:SelctproductComponent},
     {
       path: 'cart',
       loadChildren: () => import('./cart/cart.module').then(m => m.CartModule)
@@ -20,7 +18,7 @@ const routes: Routes = [
 ];
 @NgModule({
 imports:[
-    RouterModule.forRoot(routes)
+    RouterModule.forChild(routes)
 ],exports:[
   RouterModule
 ]

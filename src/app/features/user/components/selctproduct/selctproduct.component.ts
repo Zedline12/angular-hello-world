@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { product } from 'src/app/core/models/product';
 import { AuthService } from '../services/auth.service';
 import { productshirt } from 'src/app/core/models/productshirt';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { CartService } from '../services/cart.service';
+import { ProductService } from 'src/app/core/services/product.service';
 @Component({
   selector: 'app-selctproduct',
   templateUrl: './selctproduct.component.html',
@@ -12,6 +13,7 @@ import { CartService } from '../services/cart.service';
 })
 
 export class SelctproductComponent implements OnInit {
+  pid!:Number
   product!:product
   productf!:FormGroup
   productvariants!:[{value:string,variant:string}]
@@ -25,11 +27,7 @@ export class SelctproductComponent implements OnInit {
     color:[],
     screensize:[]
   }
-    constructor(private router:Router,private serv:AuthService,private cartserv:CartService,private fb:FormBuilder){
-      const navigation=this.router.getCurrentNavigation()
-      const data:product=navigation?.extras.state as product
-      
-      this.product=data
+    constructor(private route:ActivatedRoute,private router:Router,private serv:AuthService,private cartserv:CartService,private prserv:ProductService,private fb:FormBuilder){
       
     }
     submit(){
@@ -101,6 +99,11 @@ export class SelctproductComponent implements OnInit {
        
     }
     ngOnInit(): void {
+      this.pid=Number(this.route.snapshot.paramMap.get("id")!)
+      this.prserv.getproductbyid(this.pid).subscribe(x=>{
+        this.product=x
+      })
+      console.log(this.pid)
       this.productf=this.fb.group({
        quantity:[],
        color:'',

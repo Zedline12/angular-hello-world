@@ -39,7 +39,7 @@ export class HeaderComponent implements OnInit {
     let input=event.target.value
     document.getElementById('search_in')?.classList.add("active")
     this.filterp=this.products.filter(x=>String(x._name).toLowerCase().startsWith(input.toLowerCase()))
-    console.log(this.filterp)
+    
    }
    focusout(){
    
@@ -50,7 +50,7 @@ export class HeaderComponent implements OnInit {
     this.productserv.getproducts()
     .subscribe(x=>{
      this.products=x
-     console.log(this.products)
+    
    }
     )
   
