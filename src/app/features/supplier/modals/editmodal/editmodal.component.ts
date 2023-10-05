@@ -15,7 +15,12 @@ export class EditmodalComponent {
   products!:any
   category:string="All Categories"
   constructor(private modalService: NgbModal,private serv:SupplierService ) { }
-
+  delproduct(id:Number){
+   this.products=this.products.filter((x:any)=>x.id!=id)
+   this.serv.editpnumbers(Number(localStorage.getItem("supplierid")),null).subscribe(x=>{
+    this.numbers=x
+  })
+  }
   ngOnInit(): void {
     this.serv.editpnumbers(Number(localStorage.getItem("supplierid")),null).subscribe(x=>{
       this.numbers=x
@@ -23,6 +28,7 @@ export class EditmodalComponent {
     this.serv.editproducts(Number(localStorage.getItem("supplierid")),null).subscribe(x=>{
      
       this.products=x
+      
     })
    }
    selectcat(category:string|null){

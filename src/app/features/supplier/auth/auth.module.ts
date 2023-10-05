@@ -18,8 +18,9 @@ import { TestComponent } from './test/test.component';
   ],
   providers:[AuthService],
   imports: [
-    CommonModule,
     AuthRoutingModule,
+    RouterModule,
+    CommonModule,
     ReactiveFormsModule,
     
   ]

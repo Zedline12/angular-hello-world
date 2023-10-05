@@ -1,5 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+*{
+    font-family: 'Mulish', sans-serif;
+}
+.k{
+    padding:2em;
+}
 
+p.email{
+    word-wrap: break-word;
+}
+.users{
+    background-color: #ffea03;
+    padding:20px;
+    border-radius: 25px;
+   margin-left:2em;
+}
+.user{
+    border-radius: 25px;
+    background-color:white;
+    margin-left:0.5em;
+    cursor: pointer;
+    padding:10px;
+}
+.user:hover{
+    background-color:whitesmoke;
+    transition: 0.5s;
+}
 body{
     font-family: 'Poppins', sans-serif;
     background: #ececec;
@@ -8,7 +35,7 @@ body{
 /*------------ Login container ------------*/
 
 .box-area{
-    width: 930px;
+   
 }
 
 /*------------ Right box ------------*/
@@ -34,7 +61,10 @@ body{
 /*------------ For small screens------------*/
 
 @media only screen and (max-width: 768px){
-
+     .users{
+        margin-top:1em;
+        margin:0px;
+     }
      .box-area{
         margin: 0 10px;
 

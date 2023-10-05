@@ -8,7 +8,9 @@ import { Observable } from 'rxjs';
 export class SupplierService extends api {
 
   constructor(private http:HttpClient) {super() }
-
+   deleteroduct(id:number):Observable<any>{
+    return this.http.delete(this.url+"/products/"+id,{observe:'response',responseType:'text'})
+   }
    addproduct(product:any){
     let data=new FormData()
     data.append("_name",product._name)

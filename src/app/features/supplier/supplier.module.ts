@@ -13,12 +13,14 @@ import { ControlComponent } from './components/products/control/control.componen
 import { CoreModule } from 'src/app/core/core.module';
 import { EditmodalComponent } from './modals/editmodal/editmodal.component';
 import { PricePipe } from 'src/app/core/pipes/price.pipe';
+import { SmallcardComponent } from './components/smallcard/smallcard.component';
 @NgModule({
   declarations: [
     HomeComponent,
     ProductsComponent,
     ControlComponent,
     EditmodalComponent,
+    SmallcardComponent,
   ],
   providers:[
     SupplierService,PricePipe
@@ -28,7 +30,7 @@ import { PricePipe } from 'src/app/core/pipes/price.pipe';
     SupplierRoutingModule,
     AuthModule,
     ReactiveFormsModule,
-    CoreModule
+    CoreModule,
   ]
 })
 export class SupplierModule { }

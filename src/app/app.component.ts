@@ -9,7 +9,7 @@ import { Component,ContentChild ,ElementRef,OnInit, ViewEncapsulation} from '@an
 export class AppComponent implements OnInit{
   
   constructor(){
-    console.log("d")
+  
   }
   ngOnInit(): void {
     

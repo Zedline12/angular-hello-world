@@ -1,0 +1,35 @@
+
+<div (transitionend)="tranend(product.id)" #card class="{{deleted ? 'd-none' :''}}">
+<div  class="cardd"  style="max-width: 300px;">
+    <div  id="card"  class="card">
+      <div class="text-center">
+        <div style="height:130px">
+            <img src='{{product.image}}' class="card-img-top img-fluid" alt="...">
+        </div>
+      </div>
+        <div class="card-body ">
+          <h5 class="card-title">{{product._name}}</h5>
+          <div style="">
+            <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          </div>
+          <p class="card-text price"style=""><span style="font-size:0.6em;margin-right:2px;">Egp</span><span style="font-size:0.8em;">{{product.price|price}}</span></p>
+        
+          <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                <div class="col-6">
+                    <button class="editbut" role="button"><i class="bi bi-pencil-square" style="font-size:1em;"></i> Edit</button>
+                </div>
+                <div class="col-6">
+                    <button #del (click)="deletepr(product.id)" class="editbut" style="background-color:black;color:white;box-shadow: black 0 10px 20px -10px;"><i class="bi bi-trash" style="font-size:1em;"></i><span style="font-size: 11px;;">Delete</span></button>
+                </div>
+              </div>
+          </div>
+          
+        </div>
+    </div>
+</div>
+</div>

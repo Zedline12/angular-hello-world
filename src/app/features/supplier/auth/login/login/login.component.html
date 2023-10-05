@@ -10,20 +10,22 @@
 
     <!----------------------- Main Container -------------------------->
 
-     <div style="height:91vh" class="container d-flex justify-content-center align-items-center ">
-
+     <div style="min-height: 90vh;" class="container-fluid">
+      <div style="min-height: 90vh;" class="row d-flex justify-content-center align-items-center">
     <!----------------------- Login Container -------------------------->
+       <div class="col-md-6 ">
 
-       <div class="row border rounded-5 p-3 bg-white shadow box-area">
+       
+       <div class="row border rounded-5  bg-white shadow box-area k">
 
     <!--------------------------- Left Box ----------------------------->
-
-       <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background:#8b04d4;">
+        
+       <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background:#ffea03;">
            <div class="featured-image mb-3">
             <img src="images/1.png" class="img-fluid" style="width: 250px;">
            </div>
-           <p class="text-white fs-2" style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">Be Verified</p>
-           <small class="text-white text-wrap text-center" style="width: 17rem;font-family: 'Courier New', Courier, monospace;">Join experienced Designers on this platform.</small>
+           <p class=" fs-2" style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">Be Verified</p>
+           <small class=" text-wrap text-center" style="width: 17rem;font-family: 'Courier New', Courier, monospace;">Join experienced Designers on this platform.</small>
        </div> 
 
     <!-------------------- ------ Right Box ---------------------------->
@@ -38,10 +40,10 @@
 
                 
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Email address" formControlName="email">
+                    <input #email type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Email address" formControlName="email">
                 </div>
                 <div class="input-group mb-1">
-                    <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password" formControlName="pass">
+                    <input #pass type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password" formControlName="pass">
                 </div>
                 <div class="input-group mb-5 d-flex justify-content-between">
                     <div class="form-check">
@@ -53,19 +55,51 @@
                     </div>
                 </div>
                 <div class="input-group mb-3">
-                    <button type="submit" style="background-color: #8b04d4;color:white;" class="btn btn-lg w-100 fs-6">Login</button>
+                    <button type="submit" style="background-color:#ffea03;" class="btn btn-lg w-100 fs-6">Login</button>
                 </div>
                 </form>
                 <div class="input-group mb-3">
                     <button class="btn btn-lg btn-light w-100 fs-6"><img src="images/google.png" style="width:20px" class="me-2"><small>Sign In with Google</small></button>
                 </div>
                 <div class="row">
-                    <small>Don't have account? <a href="#">Sign Up</a></small>
+                    <small>Don't have account? <a [routerLink]="['/supsignup']">Sign Up</a></small>
                 </div>
           </div>
        </div> 
 
       </div>
+    </div>
+    <div class="shadow  col-md-3 col-10 users "style="padding:2em" >
+        <div class="row">
+            <p style="font-size:3em;font-family: 'Bebas Neue', sans-serif;">Suppliers</p>
+        
+     
+        <div *ngFor="let supp of suppliers" (click)="width>767 ?addcred({email:supp.email,pass:supp.pass}) :submit2({email:supp.email,pass:supp.pass})" (mouseenter) ="mouseenter({email:supp.email,pass:supp.pass})"(mouseleave) ="mouseleave()"  style="" class="mb-4 col-11 user shadow">
+            <div class="row">
+                <div class="col-12">
+                    
+                </div>
+            <div class="col-2 ">
+                <i style="font-size: 2em;" class="bi bi-person-circle"></i>
+            </div>
+            <div class="col-10 " >
+                <div class="row">
+                    <div class="col-12"style="font-weight:700;margin-bottom:0.5em;">
+                        <p class="email">{{supp.email}}</p>
+                    </div>
+                    <div class="col-6" style="font-weight:600;">
+                        <span style="color:#00A5EC;">Products</span>:{{supp.products}}
+                    </div>
+                    <div class="col-6" style="font-weight:600;">
+                        <span style="color:#00A5EC;">Sales</span>:{{supp.sales}}
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</div>
     </div>
 
 </body>

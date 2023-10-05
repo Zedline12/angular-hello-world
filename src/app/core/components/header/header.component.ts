@@ -55,11 +55,9 @@ export class HeaderComponent implements OnInit {
     )
   
     this.customer={name:"",cartcount:0}
-    console.log(localStorage.getItem("customerid"))
     this.customerid=Number(localStorage.getItem("customerid"))
     if(this.customerid!=0 ||!null){
       this.serv.customer_valid(this.customerid).subscribe(x=>{
-        console.log(x)
         if(x==1){
           this.valid=true
           this.serv.get_customer(this.customerid).subscribe(x=>{

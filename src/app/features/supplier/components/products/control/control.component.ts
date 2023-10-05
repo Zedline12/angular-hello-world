@@ -37,7 +37,6 @@ export class ControlComponent implements OnInit,AfterViewInit{
      this.serv.lastweekorders(Number(localStorage.getItem("supplierid")),0).subscribe(x=>{
       this.lastweekorders=x
       this.lastweekorders.forEach(order=>this.lastweekordersprofit+=Number(order.price))
-      console.log(this.lastweekordersprofit)
      })
 
      this.serv.admindash_numbers(Number(localStorage.getItem("supplierid"))).subscribe(x=>{
