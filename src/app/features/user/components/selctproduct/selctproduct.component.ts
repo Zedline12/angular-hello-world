@@ -31,7 +31,9 @@ export class SelctproductComponent implements OnInit {
       
     }
     submit(){
-      console.log("d")
+      if(Number(localStorage.getItem("customerid"))!=0){
+
+      
       let cartsession={user_id:localStorage.getItem("customerid"),total:this.product.price*this.productf.value.quantity}
       //first step create  (cart session)
       if(localStorage.getItem("cartsessionid")!=null){
@@ -77,6 +79,10 @@ export class SelctproductComponent implements OnInit {
           console.log(err)
          })
       }
+    }
+    else{
+      alert("login first")
+    }
     }
     settext(id:string,text:string){
      document.getElementById(id)!.innerText=text
