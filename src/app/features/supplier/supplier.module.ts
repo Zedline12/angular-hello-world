@@ -14,6 +14,9 @@ import { CoreModule } from 'src/app/core/core.module';
 import { EditmodalComponent } from './modals/editmodal/editmodal.component';
 import { PricePipe } from 'src/app/core/pipes/price.pipe';
 import { SmallcardComponent } from './components/smallcard/smallcard.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { StoremagComponent } from './components/products/control/components/storemag/storemag.component';
+import { DashboardComponent } from './components/products/control/components/dashboard/dashboard.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -21,12 +24,15 @@ import { SmallcardComponent } from './components/smallcard/smallcard.component';
     ControlComponent,
     EditmodalComponent,
     SmallcardComponent,
+    StoremagComponent,
+    DashboardComponent,
   ],
   providers:[
     SupplierService,PricePipe
   ],
   imports: [
     CommonModule,
+    RouterModule,
     SupplierRoutingModule,
     AuthModule,
     ReactiveFormsModule,

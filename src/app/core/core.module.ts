@@ -17,6 +17,7 @@ import { ToysecComponent } from './home/toysec/toysec.component';
 import { DoneComponent } from './modals/done/done.component';
 import { FeaturesModule } from '../features/features.module';
 import { CoreRoutingModule } from './core-routing.module';
+import { BoxComponent } from './home/box/box.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { CoreRoutingModule } from './core-routing.module';
     FetsectionComponent,
     PrcardComponent,
     ToysecComponent,
-    DoneComponent
+    DoneComponent,
+    BoxComponent
   ],
   
   providers:[

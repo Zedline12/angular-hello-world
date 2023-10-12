@@ -1,0 +1,144 @@
+<div class="container-fluid px-4">
+    <div class="row g-3 my-2">
+        <div class="col-md-3">
+
+            <div  style="cursor: pointer;" class=" p-3  ca1 shadow   align-items-center ">
+                <div class="col-12 d-flex justify-content-between">
+                    <div style="margin-left:1em;">
+                        <h4 style="font-size: 2.2em;">{{dashn.products}}</h4>
+                        <p>Active Products</p>
+                        
+                    </div>
+                    <i class="bi bi-box-seam"style="font-size:3rem;margin-right:1em;"></i>   
+                </div>
+                <hr style="margin:0px;font-size:20px;"/>
+                  <div class="col-12">
+                    <p style="font-size:0.9em; margin-bottom: 0px;margin-top:1em;margin-left:1em;"><i class="bi bi-clock" style="margin-right:5px;"></i> update 2:15am</p>
+                  </div>  
+            </div>
+        </div>
+      
+
+          <!-- Modal -->
+          
+        
+
+        
+       <div class="col-md-3">
+
+        <div  style="cursor: pointer;" class=" p-3  ca2 shadow   align-items-center ">
+            <div class="col-12 d-flex justify-content-between">
+                <div style="margin-left:1em;">
+                    <h4 style="font-size: 2.2em;">{{30200|price}}<span style="font-size:0.6em;margin-left:5px;">Egp</span></h4>
+                    <p >All Earnings</p>
+                    
+                </div>
+                <i class="bi bi-cash-coin"style="font-size:3rem;margin-right:1em;"></i>   
+            </div>
+            <hr style="margin:0px;font-size:20px;"/>
+            <div class="col-12">
+              <p style="font-size:0.9em; margin-bottom: 0px;margin-top:1em;margin-left:1em;"><i class="bi bi-clock" style="margin-right:5px;"></i> update 2:15am</p>
+            </div>  
+        </div>
+    </div>
+        <div class="col-md-3">
+        <div  style="cursor: pointer;" class=" p-3  ca3 shadow  align-items-center ">
+            <div class="col-12 d-flex justify-content-between">
+            <div style="margin-left:1em;">
+                <h4 style="font-size: 2.2em;">{{dashn.customers}}</h4>
+                <p>Customers</p>
+                
+            </div>
+            <i class="bi bi-person-circle"style="font-size:3rem;margin-right:1em;"></i>   
+        </div>
+        <hr style="margin:0px;font-size:20px;"/>
+        <div class="col-12">
+          <p style="font-size:0.9em; margin-bottom: 0px;margin-top:1em;margin-left:1em;"><i class="bi bi-clock" style="margin-right:5px;"></i> update 2:15am</p>
+        </div>  
+    </div>
+</div>
+
+       
+<div class="col-md-3">
+
+    <div  style="cursor: pointer;" class=" p-3  ca4 shadow  align-items-center ">
+        <div class="col-12 d-flex justify-content-between">
+            <div style="margin-left:1em;">
+                <h4 style="font-size: 2.2em;">3899</h4>
+                <p>Delivery</p>
+                
+            </div>
+            <i class="bi bi-truck"style="font-size:3rem;margin-right:1em;"></i>   
+        </div>
+        <hr style="margin:0px;font-size:20px;"/>
+        <div class="col-12">
+          <p style="font-size:0.9em; margin-bottom: 0px;margin-top:1em;margin-left:1em;"><i class="bi bi-clock" style="margin-right:5px;"></i> update 2:15am</p>
+        </div>  
+    </div>
+</div>
+    </div>
+   
+    <div class="row mt-5 mb-5">
+        <div class="col-md-6">
+            <div class="card chart-container">
+                <canvas id="chart"></canvas>
+              </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card chart-container">
+                <canvas id="barchart"></canvas>
+              </div>
+        </div>
+       
+    </div>
+    <div class="row my-5">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-lg-3 col-12">
+                    <div class="row">
+                        <div class="col-lg-5 col-6">
+                            <div class="dropdown">
+                                <h3 class="dropdown-toggle" data-bs-toggle="dropdown" >
+                                  {{selectedvalue}}
+                                </h3>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item active" (click)="dateselect('Today')">Today</a></li>
+                                  <li><a class="dropdown-item" (click)="dateselect('LastWeek')">LastWeek</a></li>
+                                  <li><a class="dropdown-item" (click)="dateselect('LastMonth')">LastMonth</a></li>
+                                </ul>
+                              </div>
+                        </div>
+                        <div class="col-lg-7 col-6" >
+                         <h3 style="margin-left:2px;"> Orders({{lastweekorders.length}})</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-9">
+                  <p class="price" style="font-size:1.8rem;"><i style="color:lime; font-size:1.8rem;margin-right:5px;" class="bi bi-plus-lg"></i><span style="font-size:1.2rem;margin-right:5px">Egp</span>{{lastweekordersprofit|price}}</p>
+                </div>
+              </div>
+        </div>
+        <div class="col" style="overflow-y: auto;
+        height:29rem;">
+            <table class="table maintable bg-white rounded shadow  table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col" width="50">#</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Customer</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let order of lastweekorders">
+                        <th scope="row">1</th>
+                        <td class="namee">{{order._name}}</td>
+                        <td>Jonny</td>
+                        <td class="price">{{order.price |price}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

@@ -54,10 +54,8 @@ export class SelctproductComponent implements OnInit {
        
       }
       else{
-        console.log("cart not session found")
         this.cartserv.createsession(cartsession).subscribe(x=>{
           //second step  (create cart item)
-           console.log(x)
           localStorage.setItem("cartsessionid",x)
           let cartitem={session_id:x
             ,product_id:this.product.id,

@@ -7,6 +7,11 @@
 .img{
    width:4rem;
 }
+input{
+   border-style: none;
+   background-color: whitesmoke;
+   
+}
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 .price{
     font-family: 'Rubik', sans-serif;

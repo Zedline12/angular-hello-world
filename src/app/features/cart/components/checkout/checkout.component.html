@@ -2,7 +2,9 @@
 <form [formGroup]="order" (ngSubmit)="submit()">
 
 <div class="container-fluid mt-5">
-    <div class="row d-flex justify-content-center">
+    <div class="row  d-flex justify-content-center">
+      <div class="col-10">
+        <div class="row d-flex justify-content-center">
       <div class="col-md-4 order-md-2"style="margin-left:30px;">
      
         <div *ngIf="cartproducts.length==cartitems.length" style="overflow-y: scroll; height:400px;">
@@ -34,10 +36,10 @@
           <button type="submit" class="col-2 mt-5">Place Order</button>
       </div>
      
-      <div class="col-md-7 shadow order-md-1"style="background-color:white;padding:20px 20px;">
+      <div class="col-md-5 shadow order-md-1"style="background-color:white;padding:20px 20px;">
         <h4 class="mb-3">Billing address</h4>
-          <div class="row">
-            <div class="col-md-12 mb-3">
+          <div class="row d-flex justify-content-between">
+            <div class="col-md-5 mb-3" >
               
               <label for="firstName">FullName</label>
               <input type="text" class="form-control" id="firstName" formControlName="fullname" placeholder="" value="" required>
@@ -45,8 +47,8 @@
                 Valid first name is required.
               </div>
             </div>
-          </div>
-          <div class="mb-3">
+         
+          <div class="col-md-5 mb-3 ">
             <label for="username">Phone</label>
                 <input formControlName="phone" type="number" class="form-control" required>
               <div class="invalid-feedback" style="width: 100%;">
@@ -89,6 +91,7 @@
             <label for="address2">Nearest LandMark<span style="margin-left:5px;">(Optional)</span></label>
             <input formControlName="landmark" type="text" class="form-control" id="address2">
           </div>
+        </div>
           <div class="row">
             
           </div>
@@ -155,5 +158,7 @@
         <li class="list-inline-item"><a href="#">Support</a></li>
       </ul>
     </footer>
+  </div>
+  </div>
   </div>
   </form>

@@ -1,31 +1,26 @@
 <editmodal #modal></editmodal>
-<div class="d-flex" id="wrapper" style="">
+<div class="d-flex" id="wrapper" style="background-color: whitesmoke;">
    
-    <div class="cardd" style="background-color: whitesmoke;" id="sidebar-wrapper">
+    <div class="" style="background-image: linear-gradient(#100163,#11006e);color:white;" id="sidebar-wrapper">
         <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
                 class="fas fa-user-secret me-2"></i>Codersbite</div>
         <div class="list-group list-group-flush my-3">
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+            <a [routerLink]="['/home/dashboard']" class="list-group-item list-group-item-action bg-transparent second-text fw-bold active"><i
                     class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a [routerLink]="['/home/storemag']" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="bi bi-cart"></i> Store Mng</a>
             <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                     class="fas fa-project-diagram me-2"></i>Projects</a>
             <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                     class="fas fa-chart-line me-2"></i>Analytics</a>
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                    class="fas fa-paperclip me-2"></i>Reports</a>
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                    class="fas fa-shopping-cart me-2"></i>Store Mng</a>
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                    class="fas fa-gift me-2"></i>Products</a>
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="bi bi-mailbox"></i> Reports</a>
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="bi bi-box-seam"></i> Products</a>
             <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                     class="fas fa-comment-dots me-2"></i>Chat</a>
             <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                     class="fas fa-map-marker-alt me-2"></i>Outlet</a>
-            <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
-                    class="fas fa-power-off me-2"></i>Logout</a>
+            <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i class="bi bi-door-open"></i> Logout</a>
         </div>
     </div>
-   
     <div id="page-content-wrapper" >
         <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
             <div class="d-flex align-items-center">
@@ -55,136 +50,9 @@
                 </ul>
             </div>
         </nav>
-        <div class="row mb-5">
-            <div class="col-md-6">
-                <div class="card chart-container">
-                    <canvas id="chart"></canvas>
-                  </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card chart-container">
-                    <canvas id="barchart"></canvas>
-                  </div>
-            </div>
-           
-        </div>
-        <div class="container-fluid px-4">
-            <div class="row g-3 my-2">
-                <div class="col-md-3">
-                    <div (click)="openmodal()" style="cursor: pointer;" class="p-3 cardd  shadow d-flex justify-content-around align-items-center rounded" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <div>
-                            <h3 style="font-size: 2em;">Edit Or View</h3>
-                            <p style="margin:0" class="fs-5"><span style="margin-right:5px;font-weight:bold;">{{dashn.products}}</span>Active Products</p>
-                            <p style="margin:0">From <span >6</span> Categories</p>
-                        </div>
-                        <i class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i>
-                    </div>
-                </div>
-
-                  <!-- Modal -->
-                  
-                
-
-                
-
-                <div class="col-md-3">
-                    <div style="cursor: pointer;" class="p-3 cardd shadow d-flex justify-content-around align-items-center rounded">
-                        <div>
-                            <h3 style="font-size: 2.2em;">Total Sales</h3>
-                            <p class="fs-5">{{dashn.sales}}</p>
-                            
-                        </div>
-                        <i class="bi bi-cash-coin"style="font-size:2.5rem"></i>
-                        
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div style="cursor: pointer;" class="p-3 cardd shadow d-flex justify-content-around align-items-center rounded">
-                        <div>
-                            <h3 style="font-size:2.2em;">Customers</h3>
-                            <p class="fs-5">{{dashn.customers}}</p>
-                            
-                            
-                        </div>
-                        <i class="bi bi-person-circle" style="font-size:2.5rem;"></i>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div style="cursor: pointer;" class="p-3 cardd shadow d-flex justify-content-around align-items-center rounded">
-                        <div>
-                            <h3 class="fs-2">3899</h3>
-                            <p class="fs-5">Delivery</p>
-                        </div>
-                        <i class="bi bi-truck"style="font-size:2.5rem;" ></i>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div style="cursor: pointer;" [routerLink]="['/products']" class="p-3 cardd shadow d-flex justify-content-around align-items-center rounded">
-                        <div>
-                            <h3 class="fs-2">Add New Product</h3>
-                            <p class="fs-5">Enlarge Your Inventory</p>
-                        </div>
-                        <i class="bi bi-plus-circle-dotted" style="font-size:2.5rem;"></i>
-                      
-                    </div>
-                </div>
-
-            </div>
-           
-           
-            <div class="row my-5">
-                <div class="col-12">
-                    <div class="row">
-                        <div class="col-lg-3 col-12">
-                            <div class="row">
-                                <div class="col-lg-5 col-6">
-                                    <div class="dropdown">
-                                        <h3 class="dropdown-toggle" data-bs-toggle="dropdown" >
-                                          {{selectedvalue}}
-                                        </h3>
-                                        <ul class="dropdown-menu">
-                                          <li><a class="dropdown-item active" (click)="dateselect('Today')">Today</a></li>
-                                          <li><a class="dropdown-item" (click)="dateselect('LastWeek')">LastWeek</a></li>
-                                          <li><a class="dropdown-item" (click)="dateselect('LastMonth')">LastMonth</a></li>
-                                        </ul>
-                                      </div>
-                                </div>
-                                <div class="col-lg-7 col-6" >
-                                 <h3 style="margin-left:2px;"> Orders({{lastweekorders.length}})</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-9">
-                          <p class="price" style="font-size:1.8rem;"><i style="color:lime; font-size:1.8rem;margin-right:5px;" class="bi bi-plus-lg"></i><span style="font-size:1.2rem;margin-right:5px">Egp</span>{{lastweekordersprofit|price}}</p>
-                        </div>
-                      </div>
-                </div>
-                <div class="col" style="overflow-y: auto;
-                height:29rem;">
-                    <table class="table maintable bg-white rounded shadow  table-hover">
-                        <thead>
-                            <tr>
-                                <th scope="col" width="50">#</th>
-                                <th scope="col">Product</th>
-                                <th scope="col">Customer</th>
-                                <th scope="col">Price</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let order of lastweekorders">
-                                <th scope="row">1</th>
-                                <td class="namee">{{order._name}}</td>
-                                <td>Jonny</td>
-                                <td class="price">{{order.price |price}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-        </div>
+        <div class="container-fluid">
+            <router-outlet></router-outlet>
+        </div>   
     </div>
 </div>
 <!-- /#page-content-wrapper -->

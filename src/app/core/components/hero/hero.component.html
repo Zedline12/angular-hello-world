@@ -1,14 +1,15 @@
-<section class="hero">
+<section class="hero d-flex justify-content-md-start justify-content-center">
     <div class="hero-inner">
         <div class="container-fluid">
             <div class="row" style="">
-                <h1>Incredible Prices <br/>on All Your &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <br/> Favorite Items &nbsp; &nbsp;</h1>
+                <h1 *ngIf="!(width <=768)">Incredible Prices <br/>on All Your &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <br/> Favorite Items &nbsp; &nbsp;</h1>
+                <h1 *ngIf="width <=768">Incredible Prices <br/>on All Your<br/> Favorite Items</h1>
             </div>
-            <div class="row" style="margin-left:4em">
-                <div class=" d-flex align-items-center justify-content-start col-12">
+            <div class="row rowsm d-flex justify-content-center" >
+                <div class="shop d-flex align-items-center justify-content-md-start justify-content-center col-12">
                     <h4>Shop smarter, not harder.</h4>
                 </div>
-                <div class="col-12 mt-3 col-12 d-flex align-items-center justify-content-start">
+                <div class="col-12 mt-3 col-12 d-flex align-items-center justify-content-md-start justify-content-center">
                     <button class="button-18">Get Started</button>
                 </div>
             </div>
