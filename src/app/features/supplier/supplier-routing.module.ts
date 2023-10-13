@@ -6,6 +6,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { ControlComponent } from './components/products/control/control.component';
 import { StoremagComponent } from './components/products/control/components/storemag/storemag.component';
 import { DashboardComponent } from './components/products/control/components/dashboard/dashboard.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
   {path:'home',component:ControlComponent,children:[
@@ -19,7 +20,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes),NgbModule],
   exports: [RouterModule]
 })
 export class SupplierRoutingModule { }

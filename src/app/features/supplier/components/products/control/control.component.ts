@@ -29,6 +29,7 @@ export class ControlComponent implements OnInit,AfterViewInit{
     this.elementref.nativeElement.appendChild(s);
    }
    ngOnInit(): void {
+    
     this.serv.suppliername(Number(localStorage.getItem("supplierid"))).subscribe(x=>{
       this.suppliername=x
     })

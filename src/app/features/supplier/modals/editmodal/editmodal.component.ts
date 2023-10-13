@@ -21,6 +21,11 @@ export class EditmodalComponent {
     this.numbers=x
   })
   }
+   open() {
+    console.log("open")
+    this.modalRef = this.modalService.open(this.modalContent)
+    this.modalRef.result.then()
+  }
   ngOnInit(): void {
     this.serv.editpnumbers(Number(localStorage.getItem("supplierid")),null).subscribe(x=>{
       this.numbers=x
@@ -42,10 +47,6 @@ export class EditmodalComponent {
     this.category=category!
    }
 
-  open() {
-    this.modalRef = this.modalService.open(this.modalContent)
-    this.modalRef.result.then()
-  }
 
   close() {
     this.modalRef.close()

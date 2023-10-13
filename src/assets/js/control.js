@@ -8,8 +8,8 @@ const myChart = new Chart(document.getElementById("chart").getContext('2d'), {
     datasets: [{
       label: 'Last week',
       
-      backgroundColor: '#8f3bd4',
-      borderColor: 'gold',
+      backgroundColor: 'rgba(161, 198, 247, 1)',
+      borderColor: 'rgb(47, 128, 237)',
       data: [3000, 4000, 2000, 5000, 8000, 9000, 2000],
     }]
   },
@@ -32,7 +32,7 @@ const myBarChart = new Chart(document.getElementById("barchart").getContext('2d'
     "beans", "maize", "oil"],
     datasets: [{
       label: 'food Items',
-      backgroundColor: '#6100b0',
+      backgroundColor: 'rgba(161, 198, 247, 1)',
       borderColor: 'rgb(47, 128, 237)',
       data: [300, 400, 200, 500, 800, 900, 200],
     }]

@@ -17,6 +17,7 @@ import { SmallcardComponent } from './components/smallcard/smallcard.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { StoremagComponent } from './components/products/control/components/storemag/storemag.component';
 import { DashboardComponent } from './components/products/control/components/dashboard/dashboard.component';
+import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -25,10 +26,10 @@ import { DashboardComponent } from './components/products/control/components/das
     EditmodalComponent,
     SmallcardComponent,
     StoremagComponent,
-    DashboardComponent,
+    DashboardComponent
   ],
   providers:[
-    SupplierService,PricePipe
+    SupplierService,PricePipe,NgbActiveModal
   ],
   imports: [
     CommonModule,
@@ -37,6 +38,7 @@ import { DashboardComponent } from './components/products/control/components/das
     AuthModule,
     ReactiveFormsModule,
     CoreModule,
-  ]
+    NgbModule
+  ],
 })
 export class SupplierModule { }

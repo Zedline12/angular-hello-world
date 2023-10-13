@@ -18,7 +18,7 @@
             </div>
         </div>
       
-
+           
           <!-- Modal -->
           
         
@@ -26,7 +26,7 @@
         
        <div class="col-md-3">
 
-        <div  style="cursor: pointer;" class=" p-3  ca2 shadow   align-items-center ">
+        <div (click)="openmodal()"  style="cursor: pointer;" class=" p-3  ca2 shadow   align-items-center ">
             <div class="col-12 d-flex justify-content-between">
                 <div style="margin-left:1em;">
                     <h4 style="font-size: 2.2em;">{{30200|price}}<span style="font-size:0.6em;margin-left:5px;">Egp</span></h4>
@@ -142,3 +142,4 @@
     </div>
 
 </div>
+<editmodal #modal></editmodal>
