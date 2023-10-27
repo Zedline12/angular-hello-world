@@ -10,11 +10,14 @@ import { Observable, catchError ,of} from 'rxjs';
 export class AuthService extends api{
 status!:any
   constructor(private http:HttpClient) {super() }
-   login(customer:customer):Observable<any>{
+   login(email:string,pass:string):Observable<any>{
     let queryParams = new HttpParams();
-    queryParams = queryParams.append("email",customer.email);
-    queryParams = queryParams.append("pass",customer.pass);
+    queryParams = queryParams.append("email",email);
+    queryParams = queryParams.append("pass",pass);
      return this.http.get(this.url+"/customers/check",{params:queryParams,observe: 'response'})
+  }
+  loginhelper():Observable<any>{
+    return this.http.get(this.url+"/customers/")
   }
 
    Signup(customer:customer):Observable<any>{

@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+*{
+  font-family: 'Open Sans', sans-serif;
+}
+label{
+ 
+    font-size:1.4em;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+input{
+    padding:5px;
+    width:100%;
+}
+.select{
+  width:100%;
+  background-color: white;
+}
+
+
+.submit {
+  background:gold;
+  border-radius: 999px;
+  box-shadow: gold 0 10px 20px -10px;
+  box-sizing: border-box;
+  color:black;
+  cursor: pointer;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size:1.2em;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 48px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}

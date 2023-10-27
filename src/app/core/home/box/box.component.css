@@ -1,3 +1,7 @@
 .box div img{
     cursor: pointer;
 }
+.low{
+    padding-top:2em;
+    padding-bottom:1em;
+}

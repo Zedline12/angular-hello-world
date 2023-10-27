@@ -1,5 +1,4 @@
-<editmodal #modal></editmodal>
-<button (click)="openmodal()">Open</button>
+
 <div class="d-flex" id="wrapper" style="background-color: whitesmoke;">
    
     <div class="" style="background-image: linear-gradient(#100163,#11006e);color:white;" id="sidebar-wrapper">
@@ -23,7 +22,8 @@
         </div>
     </div>
     <div id="page-content-wrapper" >
-        <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+       
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow mb-5 py-4 px-4">
             <div class="d-flex align-items-center">
                 <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
                 <h2 class="fs-2 m-0">Dashboard</h2>
@@ -40,7 +40,8 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-person-circle" style="margin-right:5px;"></i>{{suppliername}}
+                            <img src="assets/images/profile.png" style="width:60px;">
+                            <span style="font-family: 'DM Sans', sans-serif;margin-left:1em;">{{suppliername}}</span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -51,7 +52,11 @@
                 </ul>
             </div>
         </nav>
-       
+        <div class="container-fluid">
+            <router-outlet></router-outlet>
+            
+        </div>   
     </div>
+   
 </div>
 <!-- /#page-content-wrapper -->

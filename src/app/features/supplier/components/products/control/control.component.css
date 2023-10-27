@@ -1,10 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap');
 *{
     font-family: 'Mulish', sans-serif;
   
 }
-
+.dropdown-menu{
+  min-width:100%;
+ 
+}
+.dropdown-toggle{
+  font-size: 1.1em;
+}
+.dropdown-toggle::after {
+ margin-left:1em;
+ color:#550596;
+ font-size: 1.2em;
+}
+.dropdown-item{
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.2em;
+}
 hr {
   border: none;
   height: 2px;

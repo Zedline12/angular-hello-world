@@ -9,6 +9,8 @@ import { ProductService } from 'src/app/core/services/product.service';
 })
 export class MainComponent implements OnInit {
   products=new Array()
+  secondproducts=new Array()
+  allproducts=new Array()
   search!:string
 constructor(private serv:ProductService,private route:ActivatedRoute){
 
@@ -19,7 +21,24 @@ ngOnInit(): void {
     this.products=x.filter(x=>{
       return x._name.includes(this.search)
     })
+
+    this.secondproducts=x.filter(x=>{
+      return (x._name.includes(this.search.substring(0, this.search.indexOf(' '))) && (this.products.every(obj=>{
+        return obj.id!=x.id
+      })))
+    })
     console.log(this.products)
+    this.allproducts=x.filter(x=>{
+      return (this.products.every(obj=>{
+       
+       return obj.id!=x.id
+      })&&(
+        this.secondproducts.every(obj=>{
+          
+         return obj.id!=x.id
+        })
+      ))
+    })
    })
 }
 

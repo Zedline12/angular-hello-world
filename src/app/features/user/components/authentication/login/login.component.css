@@ -20,3 +20,83 @@
     border-bottom-right-radius: .3rem;
     }
     }
+    @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+*{
+    font-family: 'Mulish', sans-serif;
+}
+.k{
+    padding:2em;
+}
+
+p.email{
+    word-wrap: break-word;
+}
+.users{
+    background-color: #ffea03;
+    padding:20px;
+    border-radius: 25px;
+  
+}
+.user{
+    border-radius: 25px;
+    background-color:white;
+    margin-left:0.5em;
+    cursor: pointer;
+    padding:10px;
+}
+.user:hover{
+    background-color:whitesmoke;
+    transition: 0.5s;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #ececec;
+}
+
+/*------------ Login container ------------*/
+
+.box-area{
+   
+}
+
+/*------------ Right box ------------*/
+
+.right-box{
+    padding: 40px 30px 40px 40px;
+}
+
+/*------------ Custom Placeholder ------------*/
+
+::placeholder{
+    font-size: 16px;
+}
+
+.rounded-4{
+    border-radius: 20px;
+}
+.rounded-5{
+    border-radius: 30px;
+}
+
+
+/*------------ For small screens------------*/
+
+@media only screen and (max-width: 768px){
+     .users{
+        margin-top:1em;
+        margin:0px;
+     }
+     .box-area{
+        margin: 0 10px;
+
+     }
+     .left-box{
+        height: 100px;
+        overflow: hidden;
+     }
+     .right-box{
+        padding: 20px;
+     }
+
+}

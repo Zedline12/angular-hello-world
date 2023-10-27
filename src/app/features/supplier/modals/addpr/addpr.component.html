@@ -1,0 +1,172 @@
+<div #modal class="modal modal-xl  fade" id="staticBackdropp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div   class="modal-dialog modal-dialog-centered  ">
+      <div style="background-color: whitesmoke;" class="modal-content">
+        <div class="modal-header text-center">
+          <h5 class="modal-title text-center" id="staticBackdropLabel">Your Products Stock</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div  class="modal-body">
+           <div class="container">
+            <form [formGroup]="product" (ngSubmit)="submit()">
+            <div class="row  d-flex justify-content-center p-3 ">
+              
+
+              
+              <div class="col-sm-6 p-3 ">
+                <div class="row">
+                  <div class="col-12">
+                    <label id="label">Title</label>
+                  </div>
+                  <div class="col-12">
+                    <input [ngClass]="!_name?.valid && (_name?.dirty || _name?.touched) ?'red':''" formControlName="_name">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 p-3 ">
+                <div class="row">
+                  <div class="col-12">
+                    <label>Description</label>
+                  </div>
+                  <div class="col-12">
+                    <input [ngClass]="!_desc?.valid && (_desc?.dirty || _desc?.touched) ?'red':''" formControlName="_desc">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 p-3 ">
+                <div class="row">
+                  <div class="col-12">
+                    <label>Category</label>
+                  </div>
+                  <div class="col-12">
+                    <select class="form-select" formControlName="category_id" aria-label="Default select example" (change)="sel()">
+                      <option disabled selected>Select Category</option>
+                      <option *ngFor="let x of categories" [ngValue]="x.id">{{x._name}}</option>
+                      
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 p-3 ">
+                <div class="row ">
+                  <div class="col-12  ">
+                    <label>Price</label>
+                  </div>
+                  <div class="col-12">
+                    <input type="number" class="pricee"  [ngClass]="!price?.valid && (price?.dirty ||price?.touched) ?'red':''" formControlName="price"/>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 p-3 ">
+                <div class="row ">
+                  <div class="col-12  ">
+                    <label>Image</label>
+                   
+                  </div>
+                  <div class="col-12">
+                    <input class="form-control form-control-lg" id="formFileLg" type="file" (change)="fileselect($event)" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 p-3 ">
+                <div class="row ">
+                  <div class="col-12  ">
+                    <label>Product Type</label>
+                   
+                  </div>
+                  <div class="col-12">
+                    <select class="form-select" formControlName="producttype" aria-label="Default select example" (change)="seltype()">
+                      <option disabled selected>Select Type</option>
+                      <option *ngFor="let type of producttypes" [ngValue]="type.id">{{type.producttype}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6 p-3 ">
+                <div class="row ">
+                  <div class="col-12  ">
+                    <label>BrandName</label>
+                   
+                  </div>
+                  <div class="col-12">
+                   <select class="form-select"  #brand aria-label="Default select example" (change)="selbrandname(brand.value)">
+                    <option disabled selected>Select Brand</option>
+                    <option *ngFor="let object of avaoptions" [ngValue]="object.brandname">{{object.brandname}}</option>
+                  </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 p-3 ">
+                <div class="row ">
+                  <div class="col-12  ">
+                    <label>Operating System</label>
+                   
+                  </div>
+                  <div class="col-12">
+                   <select class="form-select"  #brand aria-label="Default select example" (change)="selopersystem(brand.value)">
+                    <option disabled selected>Select Oper System</option>
+                    <option *ngFor="let object of avaoptions" [ngValue]="object.opersystem">{{object.opersystem}}</option>
+                  </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 p-3 ">
+                <div class="row ">
+                  <div class="col-12  ">
+                    <label>Memory Storage</label>
+                   
+                  </div>
+                  <div class="col-12">
+                    <select id="memorystor" #memory class="multiple-checkboxes" multiple="multiple" formControlName="memories">
+                      <option *ngFor="let object of avaoptions" [ngValue]="object.memorystorage">{{object.memorystorage}}</option>
+                  </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 p-3 ">
+                <div class="row ">
+                  <div class="col-12  ">
+                    <label>Colors</label>
+                   
+                  </div>
+                  <div class="col-12">
+                    <select id="colors" class="multiple-checkboxes" multiple="multiple">
+                      <option *ngFor="let object of avaoptions" [ngValue]="object.color">{{object.color}}</option>
+                  </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 p-3 ">
+                <div class="row ">
+                  <div class="col-12  ">
+                    <label>Screen Size</label>
+                  </div>
+                  <div class="col-12">
+                    <input type="number" class="price"  [ngClass]="!price?.valid && (price?.dirty ||price?.touched) ?'red':''" formControlName="price"/>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 p-3 ">
+                <div class="row ">
+                  <div class="col-12  ">
+                    <label>Quantity</label>
+                  </div>
+                  <div class="col-12">
+                    <input type="number" class="price"  [ngClass]="!price?.valid && (price?.dirty ||price?.touched) ?'red':''" formControlName="quantity"/>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 p-3 d-flex justify-content-center mt-3">
+                <button class="submit" type="submit">Submit</button>
+              </div>
+            </div>
+          </form>
+           </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>

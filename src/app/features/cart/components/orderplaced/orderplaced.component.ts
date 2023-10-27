@@ -12,7 +12,8 @@ export class OrderplacedComponent implements OnInit {
 
   }
   ngOnInit(): void {
-     this.cartserv.getorders(Number(localStorage.getItem("customerid"))).subscribe(x=>{this.orders=x})
+     this.cartserv.getorders(Number(localStorage.getItem("customerid"))).subscribe(x=>{this.orders=x
+    console.log(x)})
      console.log(this.orders)
   }
 }

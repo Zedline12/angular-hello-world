@@ -80,14 +80,14 @@ submit(){
   this.productf.brandname=this.brandname
   this.productf.opersystem=this.opersystem
    console.log(this.productf)
- this.supserv.addproduct(this.productf).subscribe(x=>{
-   this.loading=false
-   this.openmodal()
-   document.getElementById('openmodal')?.click()
-   console.log(x)
- },err=>{
-   console.log(err)
- })
+// this.supserv.addproduct(this.productf).subscribe(x=>{
+ //  this.loading=false
+  // this.openmodal()
+  // document.getElementById('openmodal')?.click()
+  // console.log(x)
+ //},err=>{
+ //  console.log(err)
+ //})
 }
 pricecheck(){
   let price=this.product.get("price")?.value

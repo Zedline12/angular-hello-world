@@ -1,12 +1,12 @@
-<div #modal class="modal modal-xl  fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div  #modal class="modal modal-xl  fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div   class="modal-dialog modal-dialog-centered  ">
       <div class="modal-content">
         <div class="modal-header text-center">
           <h5 class="modal-title text-center" id="staticBackdropLabel">Your Products Stock</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div  class="modal-body">
-           <div  class="container-fluid">
+        <div style="" class="modal-body">
+           <div   class="container-fluid">
             <div class="row toprow">
                 <div class="col-lg-3 col-md-5 col-12 d-flex align-items-center">
                     <div class="dropdown" #dropdown>
@@ -56,7 +56,7 @@
                     </tr>
                     <tr>
                         <td>
-                            {{numbers.sold}}
+                            
                         </td>
                     </tr>
                     <tr>
@@ -88,150 +88,7 @@
             border:none;" class="mt-5"/>
             <div class="row botrow">
                <smallcard (delproduct)="delproduct($event)" *ngFor="let product of products" [product]="product" class="col-xl-3 col-lg-3 col-md-6 col-sm-6 d-flex justify-content-center mb-4"></smallcard>
-             <div class="d-none col-12 mt-5" style="max-height:50vh;overflow: auto;" >
             
-                <table *ngFor="let product of products"   class="table  cl ">
-                   
-                    <tr>
-                      
-                        <th>
-                           Name
-                        </th>
-                        <th >
-                            +
-                          </th>
-                          <th >
-                           +
-                          </th>
-                          <th>
-                             +
-                          </th>
-                        <th>
-                            Price
-                         </th>
-                         <th>
-                            Stock
-                         </th>
-                         <th>
-                            Sold
-                         </th>
-                        
-                         <th>
-                           Rating
-                         </th>
-                    </tr>
-                    <tr>
-                       
-                        <td  class="name">
-                           {{product._name}}
-                        </td>
-                       
-                        <td  class="functions">
-                            Add Stock
-                         </td>
-                         <td  class="functions">
-                            Add Discount
-                         </td>
-                         <td  class="functions">
-                            Edit Product
-                         </td>
-                        <td >
-                            Egp {{product.price |price}}
-                         </td>
-                         <td >
-                            {{product.stock}}
-                         </td>
-                         <td >
-                            {{product.sold}}
-                         </td>
-                         <td >
-                            4.5
-                         </td>
-                    </tr>
-                </table>
-
-                 
-                <table *ngFor="let product of products"  class=" cs mb-5">
-                    <tr>
-                    <!--First 3 Rows Coulmns-->
-                        <th>
-                           Name
-                        </th>
-                        <th>
-                            +
-                          </th>
-                          <th>
-                           +
-                          </th>
-                        
-                       
-                         </tr>
-                         <!--End Row-->
-                         
-                         <!--Start Row-->
-                         <tr>
-                            <td>
-                                {{product._name}}
-                        </td>
-                        <td class="functions">
-                            Add Stock
-                          </td>
-                          <td class="functions">
-                           Add Discount
-                          </td>
-                       
-                        </tr>
-
-                        <!--Start Second Row columns-->
-                         <tr>
-                            <th>
-                                +
-                             </th>
-
-                            <th>
-                            Stock
-                         </th>
-                         <th>
-                           Sold
-                         </th>
-                         
-                        
-                        </tr>
-                        <tr>
-                            <td class="functions" >
-                                Edit Product
-                               </td>
-                               <td>
-                               {{product.stock}}
-                               </td>
-                             <td>
-                                {{product.sold}}
-                             </td>
-                            
-                        </tr>
-                        <!--End Row-->
-                        
-                        
-                         <tr>
-                            <th>
-                               Price
-                             </th>
-                             <th>
-                               Rating
-                             </th>
-                             <th>
-
-                             </th>
-                            </tr>
-                            <tr>
-                               <td>{{product.price|price}}</td>
-                                 <td>
-                                    4.5
-                                 </td>
-                            </tr>
-                            
-                </table>
-             </div>
             </div>
            </div>
         </div>
@@ -242,3 +99,8 @@
       </div>
     </div>
   </div>
+
+
+
+
+  

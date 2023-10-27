@@ -1,50 +1,57 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <app-hero></app-hero>
+<div class="mt-5">
+  <app-carousel></app-carousel>
+</div>
 
-    
-  
+   <div class="mt-5">
+    <box ></box>
+   </div>
 
-
-<div class="container mt-5" >
-  <div class="row d-flex justify-content-center">
-   
-  </div>
-  <div style="margin-top:12em;">
-    <app-fetsection ></app-fetsection>
-  </div>
-
-  
-   
-     <div class="containerr mb-5" style="margin-top:10em;">
-      <h1 style="font-weight:bold">Newest Products</h1>
-      <div class="d-flex flex-row" style="overflow-x: scroll;max-width: 100%;;" id="style-3">
-        <app-prcard class="col-md-4 col-12" *ngFor="let product of products" [product]="product"></app-prcard>
-      </div>
-     </div>
-      <div class="mb-5" style="margin-top:10em;">
-        <h1 style="font-weight:bold">Electronics</h1>
-        <div class="d-flex flex-row" id="style-3" style="overflow-x: scroll;max-width: 100%;">
+<div class="container-fluid" style="background-color: whitesmoke;height:100%;">
+  <div class="container mt-5" >
+    <div class="row d-flex justify-content-center">
      
-          <div class="col-md-2 col-6">
-           <img src="assets/images/main/electro/da371813-ec47-4fc2-922b-04068760ca93.avif">
-          </div>
-          <div class="col-md-2 col-6">
-            <img src="assets/images/main/electro/45d45ca9-5411-47c8-b1b6-f3d701f9aaa1.avif">
-           </div>
-           <div class="col-md-2 col-6">
-            <img src="assets/images/main/electro/95c3c403-936e-4794-994b-83693bf6cfcc.avif">
-           </div>
-
-           <div class="col-md-2 col-6">
-            <img src="assets/images/main/electro/60432496-4667-4871-82f4-109854c566ab.avif">
-           </div>
-           <div class="col-md-2 col-6">
-            <img src="assets/images/main/electro/b4510ca4-26ba-438c-8c9c-9b19d2118915.avif">
-           </div>
-           <div class="col-md-2 col-6">
-            <img src="assets/images/main/electro/dfb60de6-f99f-40be-9e71-f8091627140c.avif">
-           </div>
+    </div>
+    <div class="d-none d-md-block" style="margin-top:2.5em;">
+      <app-fetsection ></app-fetsection>
+    </div>
+     
+    <div class="mb-5" style="margin-top:5em;">
+      <h1 style="font-weight:bold">Electronics</h1>
+      <div class="d-flex flex-row" id="style-3" style="overflow-x: scroll;max-width: 100%;">
+   
+        <div class="col-md-2 col-6">
+         <img src="assets/images/main/electro/da371813-ec47-4fc2-922b-04068760ca93.avif">
         </div>
+        <div class="col-md-2 col-6">
+          <img src="assets/images/main/electro/45d45ca9-5411-47c8-b1b6-f3d701f9aaa1.avif">
+         </div>
+         <div class="col-md-2 col-6">
+          <img src="assets/images/main/electro/95c3c403-936e-4794-994b-83693bf6cfcc.avif">
+         </div>
+
+         <div class="col-md-2 col-6">
+          <img src="assets/images/main/electro/60432496-4667-4871-82f4-109854c566ab.avif">
+         </div>
+         <div class="col-md-2 col-6">
+          <img src="assets/images/main/electro/b4510ca4-26ba-438c-8c9c-9b19d2118915.avif">
+         </div>
+         <div class="col-md-2 col-6">
+          <img src="assets/images/main/electro/dfb60de6-f99f-40be-9e71-f8091627140c.avif">
+         </div>
       </div>
-     
-  </div>
+    </div>
+       <div class="containerr mb-5" style="margin-top:10em;">
+        <h1 style="font-weight:bold">Newest Products</h1>
+        <div class="d-flex flex-row" style="overflow-x: scroll;max-width: 100%;;" id="style-3">
+          <app-prcard class="col-xl-3 col-md-4 col-sm-6 m-3 col-12" *ngFor="let product of products" [product]="product"></app-prcard>
+        </div>
+       </div>
+      
+       
+      
+    </div>
+</div>
+<box2></box2>
+

@@ -1,6 +1,6 @@
 
-<button id="openmodal"  class="d-none" (click)="openmodal()"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">Open</button>
-
+<button id="openmodal" class="d-none"   (click)="openmodal()"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">Open</button>
+<a [routerLink]="['/text']">Go</a>
 <div class="wrapper">
 </div>
     <div [ngClass]="loading? 'show':''" class="overlay"></div>
@@ -135,7 +135,7 @@
     </div>
 </div>
    
-
+    
     <done #modal></done>
 </div>
 

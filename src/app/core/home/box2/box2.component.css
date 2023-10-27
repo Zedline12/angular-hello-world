@@ -1,0 +1,10 @@
+.box div img{
+    cursor: pointer;
+}
+.low{
+    padding-top:2em;
+    padding-bottom:1em;
+}
+.now{
+    color:#007185;cursor: pointer;
+}

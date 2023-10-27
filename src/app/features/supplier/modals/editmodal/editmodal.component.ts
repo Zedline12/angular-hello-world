@@ -22,7 +22,6 @@ export class EditmodalComponent {
   })
   }
    open() {
-    console.log("open")
     this.modalRef = this.modalService.open(this.modalContent)
     this.modalRef.result.then()
   }

@@ -1,6 +1,7 @@
 import { AfterViewInit, Component,ElementRef,OnInit,ViewChild } from '@angular/core';
 import { SupplierService } from '../../../services/supplier.service';
 import { EditmodalComponent } from '../../../modals/editmodal/editmodal.component';
+import { DoneComponent } from 'src/app/core/modals/done/done.component';
 @Component({
   selector: 'app-control',
   templateUrl: './control.component.html',
@@ -11,7 +12,7 @@ export class ControlComponent implements OnInit,AfterViewInit{
   suppliername!:string
   lastweekordersprofit:number=0
   selectedvalue:string="Today"
-  @ViewChild('modal') private modalComponent!:EditmodalComponent
+  @ViewChild('modal',{ static: false }) private modalComponent!:DoneComponent
   dashn:any
   async openmodal(){
      return await this.modalComponent.open()

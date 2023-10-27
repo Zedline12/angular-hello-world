@@ -18,6 +18,7 @@ import { DoneComponent } from './modals/done/done.component';
 import { FeaturesModule } from '../features/features.module';
 import { CoreRoutingModule } from './core-routing.module';
 import { BoxComponent } from './home/box/box.component';
+import { Box2Component } from './home/box2/box2.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { BoxComponent } from './home/box/box.component';
     PrcardComponent,
     ToysecComponent,
     DoneComponent,
-    BoxComponent
+    BoxComponent,
+    Box2Component
   ],
   
   providers:[

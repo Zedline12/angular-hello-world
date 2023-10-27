@@ -20,6 +20,9 @@ export class CartService extends api {
   getproductbyid(id:number):Observable<any>{
     return this.http.get(this.url+"/products/"+id)
   }
+  getcartsession(cusid:number):Observable<any>{
+    return this.http.get(this.url+"/cart/session/"+cusid,{responseType: 'text'})
+  }
 
   //checkout
   getcustomeraddress(customerid:number):Observable<any>{

@@ -57,10 +57,11 @@ export class CheckoutComponent implements OnInit {
           color:cartitem?.color,
           memorystorage:cartitem?.memorystorage,
           screensize:cartitem?.screensize,
-          total:product.price *cartitem!.quantity
+          total:product.price *(cartitem!?.quantity==null ||undefined ?1:cartitem!.quantity)
           }
+          console.log(cartitem?.quantity)
           this.cartserv.saveorderdetail(orderdetail).subscribe(x=>{
-            console.log(x)
+           
           })
         })
         this.router.navigate(['/orders'])

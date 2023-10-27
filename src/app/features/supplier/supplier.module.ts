@@ -18,6 +18,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { StoremagComponent } from './components/products/control/components/storemag/storemag.component';
 import { DashboardComponent } from './components/products/control/components/dashboard/dashboard.component';
 import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HelloComponent } from './components/products/hello/hello.component';
+import { TextComponent } from './components/products/text.component';
+import { AddprComponent } from './modals/addpr/addpr.component';
+import { AddComponent } from './components/products/control/components/storemag/components/add/add.component';
+import { EditproductComponent } from './components/products/control/components/storemag/components/editproduct/editproduct.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -26,7 +31,12 @@ import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     EditmodalComponent,
     SmallcardComponent,
     StoremagComponent,
-    DashboardComponent
+    DashboardComponent,
+    HelloComponent,
+    TextComponent,
+    AddprComponent,
+    AddComponent,
+    EditproductComponent,
   ],
   providers:[
     SupplierService,PricePipe,NgbActiveModal

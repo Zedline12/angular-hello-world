@@ -68,9 +68,4 @@ export class HeaderComponent implements OnInit {
     }
    }
 }
-//<div class="input-group">
-//<input type="search" placeholder="Search your product" class="form-control" />
-//<button class="btn bg-white" type="submit">
- //   <i class="fa fa-search"></i>
-//</button>
-//</div>
+
