@@ -1,12 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@600&display=swap');
 
 * {
     font-family: 'Mulish', sans-serif;
 
 }
+.functionbar{
+    border-radius:0% 0% 10% 10% / 10% 10% 36% 36% ;
+    padding: 5px;
+    color:white;
+    background-image: linear-gradient(#fad42d,#cca600);
+   opacity: 0.9;
+}
+.functionbar .col-3{
+    cursor: pointer;
+    border-right: 1px solid white;
+}
+.functionbar i{
+    font-size:2.5em;
+}
+.functionbar p{
+    color:white;
 
+    font-weight: 1000;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin:0px;
+    padding:0px;
+    font-size:1em;
+    
+}
 ::-webkit-scrollbar {
     width: 3px;
     height:3px;

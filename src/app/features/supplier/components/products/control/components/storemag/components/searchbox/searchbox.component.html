@@ -1,0 +1,91 @@
+<div class="col-12">
+    <div class="row">
+        <div class="col-12 bg-white mb-5 shadow " >
+            <div class="row">
+                <div class="col-12">
+                    <div  class="row  shadow functionbar d-flex justify-content-center align-items-center "style="padding-bottom:1em;" >
+                        <div class="col-12 d-flex justify-content-start " style="margin-left:4em;margin-bottom: 1.5em;">
+                           <p style="margin:0px;"style="font-size:2.3em;">
+                            <i class="bi bi-gear"style="font-size:1.1em;"></i> Settings
+                           </p>
+                        </div>
+                        <div class="col-3 d-flex justify-content-center mb-3 ">
+                           <div class="row">
+                            <div class="col-12 d-flex justify-content-center"style="padding:0px;">
+                                <i class="bi bi-folder-plus" ></i>
+                            </div>
+                            <div class="col-12 d-flex justify-content-center"style="padding:0px;">
+                                <p>Add New Product</p>
+                            </div>
+                           
+                           </div>
+                        </div>
+                        <div class="col-3 d-flex justify-content-center mb-3 ">
+                            <div class="row">
+                             <div class="col-12 d-flex justify-content-center"style="padding:0px;">
+                                 <i class="bi bi-folder-plus" ></i>
+                             </div>
+                             <div class="col-12 d-flex justify-content-center"style="padding:0px;">
+                                 <p>Add New Product</p>
+                             </div>
+                            
+                            </div>
+                         </div>
+                        <div class="col-3 d-flex justify-content-center mb-3 ">
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-center"style="padding:0px;">
+                                    <i class="bi bi-percent" ></i>
+                                </div>
+                                <div class="col-12 d-flex justify-content-center"style="padding:0px;">
+                                    <p>Manage Discounts</p>
+                                </div>
+                               
+                               </div>
+                        </div>
+                        <div class="col-3 d-flex justify-content-center mb-3 "style="border-style: none;">
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-center"style="padding:0px;">
+                                    <i class="bi bi-clipboard-data" ></i>
+                                </div>
+                                <div class="col-12 d-flex justify-content-center"style="padding:0px;">
+                                    <p>Manage Sales</p>
+                                </div>
+                               
+                               </div>
+                        </div>
+                    </div>
+                </div>
+                  
+                
+                    <div class="row  d-flex justify-content-center mb-5 "style="margin-top:5em;">
+                        <div class="col-12">
+                            <h2  style="font-family: 'Merriweather', serif;color:#555555;margin-left:0.5em;margin-bottom:1em;">Customize Products <i class="bi bi-sliders2-vertical"style="margin-left:5px;"></i></h2>
+                        </div>
+                        <div style="overflow-x: auto;overflow-y: hidden;" class="col-10 d-flex  bg-transparent  align-items-start ">
+                            <div id="0" style="margin-right:5px;"  class="col-2  shadow cat active mt-3 ">
+                                <p class="text-center" style="margin:0px;">All</p>
+                                <p style="margin:0px;" class="text-center num">176</p>
+                             </div>
+                            <div (click)="addcat(cat)" id="{{cat.id}}" style="margin-right:5px;" *ngFor="let cat of categories"  class="col-xl-2  col-lg-3 col-md-4 shadow cat  mt-3 ">
+                                <p class="text-center" style="margin:0px;">{{cat._name}}</p>
+                                <p style="margin:0px;" class="text-center num">76</p>
+                             </div>
+                     </div>
+                       </div>
+                     <div class="row d-flex justify-content-center mt-3 mb-5">
+                        <div class="col-6 ">
+                            <div class="input-group">
+                                <p style="margin:0px;">Search For:<span style="text-decoration: underline;color:rgb(126, 133, 155);font-size: 0.9em;margin-left:5px;margin-right:5px;" *ngFor="let cat of selectedcategories">{{cat._name}}</span></p>
+                                <input style="width:90%;" type="text" class="search" placeholder="Search..."  />
+                                <span style="color:white;padding:5px;cursor: pointer;" class="d-flex align-items-center bg-primary">Search</span>
+                            </div>
+                        </div>
+                     </div>
+               
+            </div>
+           
+        
+        </div>
+        
+    </div>
+</div>

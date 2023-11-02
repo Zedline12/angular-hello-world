@@ -10,21 +10,29 @@
         <div class="card-body ">
           <h5 class="card-title">{{product._name}}</h5>
           <div style="">
-            <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-regular fa-star"></i>
+          
           </div>
-          <p class="card-text price"style=""><span style="font-size:0.6em;margin-right:2px;">Egp</span><span style="font-size:0.8em;">{{product.price|price}}</span></p>
-        
+          <p class="card-text price"style="margin:0px;"><span style="font-size:0.6em;margin-right:2px;">Egp</span><span style="font-size:0.8em;">{{product.price|price}}</span></p>
+          <p class="stock text-center">Stock: <span><span>6</span>/30</span></p>
+          <hr/>
+          <ul class="mb-3 " style="margin-top:5px;">
+            <li>
+              Add Stock
+            </li>
+            <li>
+              Add Discount %
+            </li>
+            <li>
+              Change Category
+            </li>
+          </ul>
           <div class="container-fluid">
             <div class="row d-flex justify-content-center">
                 <div class="col-6">
                     <button class="editbut" role="button"><i class="bi bi-pencil-square" style="font-size:1em;"></i> Edit</button>
                 </div>
                 <div class="col-6">
-                    <button #del (click)="deletepr(product.id)" class="editbut" style="background-color:black;color:white;box-shadow: black 0 10px 20px -10px;"><i class="bi bi-trash" style="font-size:1em;"></i><span style="font-size: 11px;;">Delete</span></button>
+                    <button #del (click)="deletepr(product.id)" class="editbut" style="background-image: linear-gradient(#302f2f,#302f2f);color:white;box-shadow: black 0 10px 20px -10px;"><i class="bi bi-trash" style="font-size:1em;"></i><span style="font-size: 11px;;">Delete</span></button>
                 </div>
               </div>
           </div>

@@ -16,6 +16,7 @@ export class StoremagComponent implements OnInit {
   products=new Array()
   numbers!:any
   categories!:any
+  selectedcategories=new Array()
   constructor(private serv:SupplierService,private catserv:CategoryService){
 
   }
@@ -37,6 +38,30 @@ export class StoremagComponent implements OnInit {
       this.products=x
       
     })
+    this.selectedcategories.push({_name:"All",id:0})
+    //Add Dash
+    $(".list-group-item").removeClass("active")
+    $("#storemng").addClass("active")
+   }
+   addcat(category:any){
+    let cat=$(`#${category.id}`)
+    if(cat.hasClass("active")){
+      this.selectedcategories=this.selectedcategories.filter(x=>x.id!=category.id)
+    cat.removeClass("active")
+    if(this.selectedcategories.length==0){
+      $("#0").addClass("active")
+      this.selectedcategories.push({_name:"All",id:0})
+    }
+    }
+    else{
+      //remove All Selection
+      this.selectedcategories=this.selectedcategories.filter(x=>x.id!=0)
+      $("#0").removeClass("active")
+     //
+
+      this.selectedcategories.push(category)
+      cat.addClass("active")
+    }
    }
   async openmodal(){
     

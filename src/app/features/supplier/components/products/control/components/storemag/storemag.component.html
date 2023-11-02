@@ -4,29 +4,11 @@
 
     <div class="row d-flex justify-content-center">
         <div class="col-md-10">
-            <div class="row">
-                <div class="col-12 bg-white mb-5" style="height: 40vh;">
-                   <div class="row d-flex justify-content-center">
-                    <div style="overflow-x: auto;overflow-y: hidden;" class="col-10 d-flex  bg-transparent  align-items-start ">
-                   
-                        <div style="max-width:9em;margin-right:5px;" *ngFor="let cat of categories"  class="col-2  bg-transparent cat active mt-3 ">
-                            <p class="text-center" style="margin:0px;">{{cat._name}}</p>
-                            <p style="margin:0px;" class="text-center num">76</p>
-                         </div>
-                         
-                 </div>
-                   </div>
-                 <div class="row d-flex justify-content-center mt-5">
-                    <div class="col-6 ">
-                        <div class="input-group">
-                            <input style="width:90%;" type="text" class="search" placeholder="Search..."  />
-                            <span style="color:white;padding:5px;cursor: pointer;" class="d-flex align-items-center bg-primary">Search</span>
-                        </div>
-                    </div>
-                 </div>
-                </div>
-                <smallcard (delproduct)="delproduct($event)" *ngFor="let product of products" [product]="product" class="col-xl-3 col-lg-3 col-md-6 col-sm-6 d-flex justify-content-center mb-4"></smallcard>
-            </div>
+           <app-searchbox></app-searchbox>
+           <div class="row">
+            <smallcard (delproduct)="delproduct($event)" *ngFor="let product of products" [product]="product" class="col-xl-3 col-lg-3 col-md-6 col-sm-6 d-flex justify-content-center mb-4"></smallcard>
+            
+           </div>
         </div>
         <div class="col-md-9 card shadow " style="min-height:50vh;">
             <div class="col-12 d-flex align-items-start p-3">

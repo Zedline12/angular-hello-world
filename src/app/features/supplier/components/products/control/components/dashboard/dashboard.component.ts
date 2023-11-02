@@ -43,6 +43,8 @@ export class DashboardComponent {
   
       this.dashn=x
      })
+     $(".list-group-item").removeClass("active")
+    $("#dashboard").addClass("active")
    }
 
    lasttimeorders(date:number){
