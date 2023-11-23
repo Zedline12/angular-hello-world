@@ -1,9 +1,10 @@
 import { Component,ViewChild,TemplateRef, ElementRef } from '@angular/core';
 import { NgbModal,NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { SupplierService } from '../../services/supplier.service';
-import { FormBuilder, FormGroup,Validators } from '@angular/forms';
+import { FormBuilder, FormGroup,FormGroupDirective,Validators } from '@angular/forms';
 import * as $ from 'jquery';
 import { CategoryService } from 'src/app/core/services/category.service';
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'addpr',
   templateUrl: './addpr.component.html',
@@ -20,6 +21,8 @@ export class AddprComponent {
   brandname!:any
   avaoptions!:any
   opersystem!:any
+   isSubmited:boolean=false
+   @ViewChild('formDirective') private formDirective!: NgForm;
   constructor(private fb:FormBuilder, private modalService: NgbModal,private serv:CategoryService,private supserv:SupplierService,private elementref:ElementRef ) { }
   
    open() {
@@ -70,28 +73,48 @@ export class AddprComponent {
     this.supserv.getavaoptions().subscribe(x=>this.avaoptions=x)
     this.product=this.fb.group({
       _name:['',Validators.required],
-      _desc:['',Validators.required],
-      image:[],
-      category_id:[],
-      producttype:[],
+      _desc:['Images simulated for illustrative purposes. Actual UI/UX may be different.**Measured diagonally, the screen size is 6.6" in the full rectangle and 6.4" accounting for the rounded corners. Actual viewable area is less due to the rounded corners and the camera cutout.',Validators.required],
+      image:[,Validators.required],
+      category_id:[,Validators.required],
+      producttype:[2],
       inventory_id:[],
       price:[,Validators.required],
       discount_id:[],
       colors:[[]],
       memorystorages:[[]],
-      quantity:[]
+      quantity:[],
+      screensize:[],
+      brandname:[],
+      opersystem:['Android 10']
     })
     
    }
    submit(){
-    
-    this.product.patchValue({
-      memorystorages:this.memories,
-      colors:this.colors
-    })
-    console.log(this.product.value)
+    this.isSubmited=true
+    if(this.product.valid){
+      this.product.patchValue({
+        memorystorages:this.memories,
+        colors:this.colors
+      })
+      this.supserv.addproduct(this.product.value).subscribe(x=>{
+     $("#donesvg").removeClass("d-none")
+      },err=>{
+        console.log(err)
+      })
+    }
    }
-
+   resetform(){
+    this.isSubmited=false
+    $("#formFileLg").val('')
+   this.formDirective.resetForm()
+   this.AddDefaultForm()
+    $("#donesvg").addClass("d-none")
+   }
+   AddDefaultForm(){
+    this.product.get("_desc")?.setValue('Images simulated for illustrative purposes. Actual UI/UX may be different.**Measured diagonally, the screen size is 6.6" in the full rectangle and 6.4" accounting for the rounded corners. Actual viewable area is less due to the rounded corners and the camera cutout.')
+    this.product.get("opersystem")?.setValue("Android 10")
+    this.product.get("producttype")?.setValue(2)
+   }
   close() {
     this.modalRef.close()
   }
@@ -104,13 +127,13 @@ export class AddprComponent {
   //gets
   get memories(){
     let raw=$('#memorystor').val() as string
-    
+
     let list = JSON.parse(JSON.stringify(raw));
     let final=list.map((x:string)=>x=x.substring(
       x.indexOf("'")+1,x.lastIndexOf("'")
     ))
     
-    return final
+    return raw
    }
    get colors(){
     var raw=JSON.stringify($('#colors').val() as string)
@@ -126,6 +149,9 @@ export class AddprComponent {
   }
   get price(){
     return this.product.get("price")
+  }
+  get image(){
+    return this.product.get("image")
   }
 
   //

@@ -11,13 +11,17 @@
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 800;
     font-size: 1.5em;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 .stock span{
-    color:green;
+    color:#d9ae02;
     font-family: 'Anton', sans-serif;
     font-size: 0.9em;
     font-weight:500;
+}
+.stock span.red , .stock span.red span{
+    color:#ab2727;
+   
 }
 .stock span span{
     font-size: 1.1em;

@@ -4,10 +4,16 @@
 *{
   font-family: 'Open Sans', sans-serif;
 }
-label{
+label:not(.warning){
  
     font-size:1.4em;
     font-family: 'Roboto Condensed', sans-serif;
+}
+.warning{
+  color:red;
+}
+.red{
+  border: 1px solid red;
 }
 input{
     padding:5px;
@@ -39,4 +45,65 @@ input{
   width: fit-content;
   word-break: break-word;
   border: 0;
+}
+
+
+/* Done Animation*/
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+ 
+  &.circle {
+    -webkit-animation: dash 1.5s ease-in-out;
+    animation: dash 1.5s ease-in-out;
+   
+  }
+  &.line {
+    stroke-dashoffset: 1000;
+    -webkit-animation: dash 1.5s 0.5s ease-in-out forwards;
+    animation: dash 1.5s .35s ease-in-out forwards;
+   
+  }
+  &.check {
+    stroke-dashoffset: -100;
+    -webkit-animation: dash-check 1.5s 0.5s ease-in-out forwards;
+    animation: dash-check 1.5s 0.5s ease-in-out forwards;
+    
+  }
+}
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+  
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+
+@keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
+  }
 }

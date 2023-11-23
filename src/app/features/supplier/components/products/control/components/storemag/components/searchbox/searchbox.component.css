@@ -6,14 +6,18 @@
     font-family: 'Mulish', sans-serif;
 
 }
+@keyframes fadeIn {
+    0% {opacity:0.2; border-radius: 0px;margin-top:50px }
+    100% {opacity: 1; border-radius:0% 0% 10% 10% / 10% 10% 36% 36% ;}
+  }
 .functionbar{
     border-radius:0% 0% 10% 10% / 10% 10% 36% 36% ;
     padding: 5px;
     color:white;
-    background-image: linear-gradient(#fad42d,#cca600);
-   opacity: 0.9;
+    background-image: linear-gradient(#f5cc16,#cca600);
+   animation: fadeIn 1.5s;
 }
-.functionbar .col-3{
+.functionbar .col-sm-3{
     cursor: pointer;
     border-right: 1px solid white;
 }

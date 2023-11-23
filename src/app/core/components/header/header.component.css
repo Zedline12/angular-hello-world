@@ -1,11 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap');
 *{
     font-family: 'Mulish', sans-serif;
 }
 .nav-link{
   color:black;
   
+}
+.brand-name{
+  font-family: 'Lobster', sans-serif;
+    margin-left:3rem;
+    margin-top:5px;
+    font-size:2.5rem;
 }
 .tint.active{
     height: 100vw;
@@ -18,21 +26,24 @@
     font-size:1.5rem;
 }
 .main-navbar{
-    
     border-bottom: 1px solid #ccc;
 }
 .main-navbar .top-navbar{
+  border-bottom-left-radius:10% 19%;
+  border-bottom-right-radius:10% 10%;
     z-index: -1;
     background-color:#ffea03;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
+
 .main-navbar .top-navbar .brand-name{
     
 }
 .main-navbar .top-navbar .nav-link{
-   
-    font-size: 1rem;
+  font-family: 'Noto Sans', sans-serif;
+    font-size: 1.2rem;
+    margin-right:2em;
     font-weight: 500;
 }
 .main-navbar .top-navbar .dropdown-menu{
@@ -59,12 +70,6 @@
     padding: 8px 20px;
     color: #000;
     font-size: 15px;
-}
-.brand-name{
-    font-family: 'Merriweather', serif;
-    margin-left:15px;
-    margin-top:5px;
-    font-size:1.5rem;
 }
 @media only screen and (max-width: 600px) {
     .main-navbar .top-navbar .nav-link{
