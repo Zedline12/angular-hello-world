@@ -12,7 +12,10 @@ export class AppComponent implements OnInit{
   
   }
   ngOnInit(): void {
+   // <app-header></app-header>
+  //  <router-outlet></router-outlet>
     
+   // <app-footer></app-footer>
   }
   get(event:any){
    
